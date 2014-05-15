@@ -1,0 +1,485 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		58F828971924B3E20044C092 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58F828961924B3E20044C092 /* Foundation.framework */; };
+		58F828991924B3E20044C092 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58F828981924B3E20044C092 /* CoreGraphics.framework */; };
+		58F8289B1924B3E20044C092 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58F8289A1924B3E20044C092 /* UIKit.framework */; };
+		58F828A11924B3E20044C092 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 58F8289F1924B3E20044C092 /* InfoPlist.strings */; };
+		58F828A31924B3E20044C092 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F828A21924B3E20044C092 /* main.m */; };
+		58F828A71924B3E20044C092 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F828A61924B3E20044C092 /* AppDelegate.m */; };
+		58F828AA1924B3E20044C092 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58F828A81924B3E20044C092 /* Main_iPhone.storyboard */; };
+		58F828AD1924B3E20044C092 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58F828AB1924B3E20044C092 /* Main_iPad.storyboard */; };
+		58F828B01924B3E20044C092 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F828AF1924B3E20044C092 /* ViewController.m */; };
+		58F828B21924B3E20044C092 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58F828B11924B3E20044C092 /* Images.xcassets */; };
+		58F828B91924B3E20044C092 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58F828B81924B3E20044C092 /* XCTest.framework */; };
+		58F828BA1924B3E20044C092 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58F828961924B3E20044C092 /* Foundation.framework */; };
+		58F828BB1924B3E20044C092 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58F8289A1924B3E20044C092 /* UIKit.framework */; };
+		58F828C31924B3E20044C092 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 58F828C11924B3E20044C092 /* InfoPlist.strings */; };
+		58F828C51924B3E20044C092 /* RenoirTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F828C41924B3E20044C092 /* RenoirTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		58F828BC1924B3E20044C092 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 58F8288B1924B3E20044C092 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 58F828921924B3E20044C092;
+			remoteInfo = Renoir;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		58F828931924B3E20044C092 /* Renoir.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Renoir.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		58F828961924B3E20044C092 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		58F828981924B3E20044C092 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		58F8289A1924B3E20044C092 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		58F8289E1924B3E20044C092 /* Renoir-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Renoir-Info.plist"; sourceTree = "<group>"; };
+		58F828A01924B3E20044C092 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		58F828A21924B3E20044C092 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		58F828A41924B3E20044C092 /* Renoir-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Renoir-Prefix.pch"; sourceTree = "<group>"; };
+		58F828A51924B3E20044C092 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		58F828A61924B3E20044C092 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		58F828A91924B3E20044C092 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
+		58F828AC1924B3E20044C092 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
+		58F828AE1924B3E20044C092 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		58F828AF1924B3E20044C092 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		58F828B11924B3E20044C092 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		58F828B71924B3E20044C092 /* RenoirTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RenoirTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		58F828B81924B3E20044C092 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		58F828C01924B3E20044C092 /* RenoirTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RenoirTests-Info.plist"; sourceTree = "<group>"; };
+		58F828C21924B3E20044C092 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		58F828C41924B3E20044C092 /* RenoirTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RenoirTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		58F828901924B3E20044C092 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				58F828991924B3E20044C092 /* CoreGraphics.framework in Frameworks */,
+				58F8289B1924B3E20044C092 /* UIKit.framework in Frameworks */,
+				58F828971924B3E20044C092 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		58F828B41924B3E20044C092 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				58F828B91924B3E20044C092 /* XCTest.framework in Frameworks */,
+				58F828BB1924B3E20044C092 /* UIKit.framework in Frameworks */,
+				58F828BA1924B3E20044C092 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		58F8288A1924B3E20044C092 = {
+			isa = PBXGroup;
+			children = (
+				58F8289C1924B3E20044C092 /* Renoir */,
+				58F828BE1924B3E20044C092 /* RenoirTests */,
+				58F828951924B3E20044C092 /* Frameworks */,
+				58F828941924B3E20044C092 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		58F828941924B3E20044C092 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				58F828931924B3E20044C092 /* Renoir.app */,
+				58F828B71924B3E20044C092 /* RenoirTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		58F828951924B3E20044C092 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				58F828961924B3E20044C092 /* Foundation.framework */,
+				58F828981924B3E20044C092 /* CoreGraphics.framework */,
+				58F8289A1924B3E20044C092 /* UIKit.framework */,
+				58F828B81924B3E20044C092 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		58F8289C1924B3E20044C092 /* Renoir */ = {
+			isa = PBXGroup;
+			children = (
+				58F828A51924B3E20044C092 /* AppDelegate.h */,
+				58F828A61924B3E20044C092 /* AppDelegate.m */,
+				58F828A81924B3E20044C092 /* Main_iPhone.storyboard */,
+				58F828AB1924B3E20044C092 /* Main_iPad.storyboard */,
+				58F828AE1924B3E20044C092 /* ViewController.h */,
+				58F828AF1924B3E20044C092 /* ViewController.m */,
+				58F828B11924B3E20044C092 /* Images.xcassets */,
+				58F8289D1924B3E20044C092 /* Supporting Files */,
+			);
+			path = Renoir;
+			sourceTree = "<group>";
+		};
+		58F8289D1924B3E20044C092 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				58F8289E1924B3E20044C092 /* Renoir-Info.plist */,
+				58F8289F1924B3E20044C092 /* InfoPlist.strings */,
+				58F828A21924B3E20044C092 /* main.m */,
+				58F828A41924B3E20044C092 /* Renoir-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		58F828BE1924B3E20044C092 /* RenoirTests */ = {
+			isa = PBXGroup;
+			children = (
+				58F828C41924B3E20044C092 /* RenoirTests.m */,
+				58F828BF1924B3E20044C092 /* Supporting Files */,
+			);
+			path = RenoirTests;
+			sourceTree = "<group>";
+		};
+		58F828BF1924B3E20044C092 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				58F828C01924B3E20044C092 /* RenoirTests-Info.plist */,
+				58F828C11924B3E20044C092 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		58F828921924B3E20044C092 /* Renoir */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 58F828C81924B3E20044C092 /* Build configuration list for PBXNativeTarget "Renoir" */;
+			buildPhases = (
+				58F8288F1924B3E20044C092 /* Sources */,
+				58F828901924B3E20044C092 /* Frameworks */,
+				58F828911924B3E20044C092 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Renoir;
+			productName = Renoir;
+			productReference = 58F828931924B3E20044C092 /* Renoir.app */;
+			productType = "com.apple.product-type.application";
+		};
+		58F828B61924B3E20044C092 /* RenoirTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 58F828CB1924B3E20044C092 /* Build configuration list for PBXNativeTarget "RenoirTests" */;
+			buildPhases = (
+				58F828B31924B3E20044C092 /* Sources */,
+				58F828B41924B3E20044C092 /* Frameworks */,
+				58F828B51924B3E20044C092 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				58F828BD1924B3E20044C092 /* PBXTargetDependency */,
+			);
+			name = RenoirTests;
+			productName = RenoirTests;
+			productReference = 58F828B71924B3E20044C092 /* RenoirTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		58F8288B1924B3E20044C092 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = SSC;
+				TargetAttributes = {
+					58F828B61924B3E20044C092 = {
+						TestTargetID = 58F828921924B3E20044C092;
+					};
+				};
+			};
+			buildConfigurationList = 58F8288E1924B3E20044C092 /* Build configuration list for PBXProject "Renoir" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 58F8288A1924B3E20044C092;
+			productRefGroup = 58F828941924B3E20044C092 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				58F828921924B3E20044C092 /* Renoir */,
+				58F828B61924B3E20044C092 /* RenoirTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		58F828911924B3E20044C092 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				58F828AD1924B3E20044C092 /* Main_iPad.storyboard in Resources */,
+				58F828B21924B3E20044C092 /* Images.xcassets in Resources */,
+				58F828AA1924B3E20044C092 /* Main_iPhone.storyboard in Resources */,
+				58F828A11924B3E20044C092 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		58F828B51924B3E20044C092 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				58F828C31924B3E20044C092 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		58F8288F1924B3E20044C092 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				58F828B01924B3E20044C092 /* ViewController.m in Sources */,
+				58F828A71924B3E20044C092 /* AppDelegate.m in Sources */,
+				58F828A31924B3E20044C092 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		58F828B31924B3E20044C092 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				58F828C51924B3E20044C092 /* RenoirTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		58F828BD1924B3E20044C092 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 58F828921924B3E20044C092 /* Renoir */;
+			targetProxy = 58F828BC1924B3E20044C092 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		58F8289F1924B3E20044C092 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				58F828A01924B3E20044C092 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		58F828A81924B3E20044C092 /* Main_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				58F828A91924B3E20044C092 /* Base */,
+			);
+			name = Main_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		58F828AB1924B3E20044C092 /* Main_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				58F828AC1924B3E20044C092 /* Base */,
+			);
+			name = Main_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		58F828C11924B3E20044C092 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				58F828C21924B3E20044C092 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		58F828C61924B3E20044C092 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		58F828C71924B3E20044C092 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		58F828C91924B3E20044C092 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Renoir/Renoir-Prefix.pch";
+				INFOPLIST_FILE = "Renoir/Renoir-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		58F828CA1924B3E20044C092 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Renoir/Renoir-Prefix.pch";
+				INFOPLIST_FILE = "Renoir/Renoir-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		58F828CC1924B3E20044C092 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Renoir.app/Renoir";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Renoir/Renoir-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "RenoirTests/RenoirTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		58F828CD1924B3E20044C092 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Renoir.app/Renoir";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Renoir/Renoir-Prefix.pch";
+				INFOPLIST_FILE = "RenoirTests/RenoirTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		58F8288E1924B3E20044C092 /* Build configuration list for PBXProject "Renoir" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				58F828C61924B3E20044C092 /* Debug */,
+				58F828C71924B3E20044C092 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		58F828C81924B3E20044C092 /* Build configuration list for PBXNativeTarget "Renoir" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				58F828C91924B3E20044C092 /* Debug */,
+				58F828CA1924B3E20044C092 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		58F828CB1924B3E20044C092 /* Build configuration list for PBXNativeTarget "RenoirTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				58F828CC1924B3E20044C092 /* Debug */,
+				58F828CD1924B3E20044C092 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 58F8288B1924B3E20044C092 /* Project object */;
+}
