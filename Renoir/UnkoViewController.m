@@ -58,6 +58,19 @@
     [self.view addSubview:imgView];
 }
 
+- (void)draw
+{
+    NSLog(@"draw!");
+    
+    UIImage* image = [RnCurrentImage mergeOriginalImageAndDeleteCache:YES];
+    
+    UIImageView* imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0.0f, 100.0f, 320.0f, image.size.height * 320.0f / image.size.width)];
+    imgView.image = image;
+    imgView.tag = 1;
+    [self.view addSubview:imgView];
+    
+}
+
 - (void)_processWithImage:(UIImage*)image
 {
     
@@ -222,30 +235,44 @@
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
     [picker dismissViewControllerAnimated:YES completion:nil];
-    UIImage* imageOriginal = [info objectForKey:UIImagePickerControllerOriginalImage];
+    BOOL imageExists = NO;
     
-    if(imageOriginal){
-        if(picker.sourceType == UIImagePickerControllerSourceTypeCamera){
-            UIImageWriteToSavedPhotosAlbum(imageOriginal, nil, nil, nil);
+    @autoreleasepool {
+        UIImage* imageOriginal = [info objectForKey:UIImagePickerControllerOriginalImage];
+        if(imageOriginal){
+            imageExists = YES;
+            if(picker.sourceType == UIImagePickerControllerSourceTypeCamera){
+                UIImageWriteToSavedPhotosAlbum(imageOriginal, nil, nil, nil);
+            }
+            [RnCurrentImage saveOriginalImageIn4Parts:imageOriginal];
         }
-        [self processWithImage:imageOriginal];
-    } else {
-        __weak UnkoViewController* _self = self;
-        NSURL* imageurl = [info objectForKey:UIImagePickerControllerReferenceURL];
-        ALAssetsLibrary* library = [[ALAssetsLibrary alloc] init];
-        [library assetForURL:imageurl
-                 resultBlock: ^(ALAsset *asset)
-         {
+    }
+    
+    if (imageExists) {
+        [self draw];
+        return;
+    }
+    
+    
+    __weak UnkoViewController* _self = self;
+    NSURL* imageurl = [info objectForKey:UIImagePickerControllerReferenceURL];
+    ALAssetsLibrary* library = [[ALAssetsLibrary alloc] init];
+    [library assetForURL:imageurl
+             resultBlock: ^(ALAsset *asset)
+     {
+         @autoreleasepool {
              ALAssetRepresentation *representation;
              representation = [asset defaultRepresentation];
              UIImage* imageOriginal = [[UIImage alloc] initWithCGImage:representation.fullResolutionImage];
-             [_self processWithImage:imageOriginal];
+             [RnCurrentImage saveOriginalImageIn4Parts:imageOriginal];
          }
-                failureBlock:^(NSError *error)
-         {
-         }
-         ];
-    }
+         [_self draw];
+     }
+            failureBlock:^(NSError *error)
+     {
+     }
+     ];
+    
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
@@ -260,6 +287,12 @@
 
 - (void)didClick:(id)sender
 {
+    for (UIView* subview in self.view.subviews) {
+        if ([subview isKindOfClass:[UIImageView class]]  ) {
+            [subview removeFromSuperview];
+        }
+    }
+    
     UIImagePickerController *pickerController = [[UIImagePickerController alloc] init];
     pickerController.delegate = self;
     [pickerController setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];

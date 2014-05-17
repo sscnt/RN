@@ -172,6 +172,10 @@
 {
     return MAX(self.size.width, self.size.height);
 }
+- (float)minsLength
+{
+    return MIN(self.size.width, self.size.height);
+}
 
 + (UIImage *)resizedImage:(UIImage *)image width:(CGFloat)width height:(CGFloat)height
 {

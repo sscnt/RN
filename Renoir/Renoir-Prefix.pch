@@ -47,3 +47,5 @@
 #import "UIViewController+extend.h"
 #import "UIImagePickerController+extend.h"
 #import "UIImage+extend.h"
+
+#import "RnCurrentImage.h"
