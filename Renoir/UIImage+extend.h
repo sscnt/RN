@@ -10,6 +10,7 @@
 
 @interface UIImage (extend)
 
+- (float)maxLength;
 + (UIImage *)resizedImage:(UIImage *)image width:(CGFloat)width height:(CGFloat)height;
 + (UIImage*)animatedGIFNamed:(NSString*)name;
 + (UIImage*)animatedGIFWithData:(NSData *)data;

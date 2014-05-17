@@ -168,6 +168,11 @@
     return transform;
 }
 
+- (float)maxLength
+{
+    return MAX(self.size.width, self.size.height);
+}
+
 + (UIImage *)resizedImage:(UIImage *)image width:(CGFloat)width height:(CGFloat)height
 {
     if (UIGraphicsBeginImageContextWithOptions != NULL) {
