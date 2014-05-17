@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		58F0526F19273C42006BE37F /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58F0526E19273C42006BE37F /* CoreMedia.framework */; };
+		58F0527119273C4A006BE37F /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58F0527019273C4A006BE37F /* CoreVideo.framework */; };
+		58F0527319273C54006BE37F /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58F0527219273C54006BE37F /* OpenGLES.framework */; };
+		58F0527519273C5C006BE37F /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58F0527419273C5C006BE37F /* AVFoundation.framework */; };
+		58F0527719273C64006BE37F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58F0527619273C64006BE37F /* QuartzCore.framework */; };
+		58F0527919273C6C006BE37F /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58F0527819273C6C006BE37F /* AssetsLibrary.framework */; };
+		58F0527A19273C73006BE37F /* libGPUImage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 58F0526A19273B2B006BE37F /* libGPUImage.a */; };
+		58F0527E19273E92006BE37F /* RnFilterDryBrush.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F0527D19273E92006BE37F /* RnFilterDryBrush.m */; };
 		58F828971924B3E20044C092 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58F828961924B3E20044C092 /* Foundation.framework */; };
 		58F828991924B3E20044C092 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58F828981924B3E20044C092 /* CoreGraphics.framework */; };
 		58F8289B1924B3E20044C092 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58F8289A1924B3E20044C092 /* UIKit.framework */; };
@@ -22,9 +30,24 @@
 		58F828BB1924B3E20044C092 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58F8289A1924B3E20044C092 /* UIKit.framework */; };
 		58F828C31924B3E20044C092 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 58F828C11924B3E20044C092 /* InfoPlist.strings */; };
 		58F828C51924B3E20044C092 /* RenoirTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F828C41924B3E20044C092 /* RenoirTests.m */; };
+		58F828D01924B41B0044C092 /* UnkoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F828CF1924B41A0044C092 /* UnkoViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		58F0526919273B2B006BE37F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 58F0526319273B2A006BE37F /* GPUImage.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BCF1A33414DDB1EC00852800;
+			remoteInfo = GPUImage;
+		};
+		58F0526B19273B2B006BE37F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 58F0526319273B2A006BE37F /* GPUImage.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BCF1A34414DDB1EC00852800;
+			remoteInfo = GPUImageTests;
+		};
 		58F828BC1924B3E20044C092 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 58F8288B1924B3E20044C092 /* Project object */;
@@ -35,6 +58,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		58F0526319273B2A006BE37F /* GPUImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GPUImage.xcodeproj; path = GPUImage/framework/GPUImage.xcodeproj; sourceTree = "<group>"; };
+		58F0526E19273C42006BE37F /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		58F0527019273C4A006BE37F /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		58F0527219273C54006BE37F /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		58F0527419273C5C006BE37F /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		58F0527619273C64006BE37F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		58F0527819273C6C006BE37F /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		58F0527C19273E92006BE37F /* RnFilterDryBrush.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RnFilterDryBrush.h; sourceTree = "<group>"; };
+		58F0527D19273E92006BE37F /* RnFilterDryBrush.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RnFilterDryBrush.m; sourceTree = "<group>"; };
 		58F828931924B3E20044C092 /* Renoir.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Renoir.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		58F828961924B3E20044C092 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		58F828981924B3E20044C092 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -55,6 +87,8 @@
 		58F828C01924B3E20044C092 /* RenoirTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RenoirTests-Info.plist"; sourceTree = "<group>"; };
 		58F828C21924B3E20044C092 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		58F828C41924B3E20044C092 /* RenoirTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RenoirTests.m; sourceTree = "<group>"; };
+		58F828CE1924B41A0044C092 /* UnkoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnkoViewController.h; sourceTree = "<group>"; };
+		58F828CF1924B41A0044C092 /* UnkoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UnkoViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +96,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58F0527A19273C73006BE37F /* libGPUImage.a in Frameworks */,
+				58F0527919273C6C006BE37F /* AssetsLibrary.framework in Frameworks */,
+				58F0527719273C64006BE37F /* QuartzCore.framework in Frameworks */,
+				58F0527519273C5C006BE37F /* AVFoundation.framework in Frameworks */,
+				58F0527319273C54006BE37F /* OpenGLES.framework in Frameworks */,
+				58F0527119273C4A006BE37F /* CoreVideo.framework in Frameworks */,
+				58F0526F19273C42006BE37F /* CoreMedia.framework in Frameworks */,
 				58F828991924B3E20044C092 /* CoreGraphics.framework in Frameworks */,
 				58F8289B1924B3E20044C092 /* UIKit.framework in Frameworks */,
 				58F828971924B3E20044C092 /* Foundation.framework in Frameworks */,
@@ -81,6 +122,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		58F0526419273B2A006BE37F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				58F0526A19273B2B006BE37F /* libGPUImage.a */,
+				58F0526C19273B2B006BE37F /* GPUImageTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		58F0527B19273DFB006BE37F /* RnFilter */ = {
+			isa = PBXGroup;
+			children = (
+				58F0527C19273E92006BE37F /* RnFilterDryBrush.h */,
+				58F0527D19273E92006BE37F /* RnFilterDryBrush.m */,
+			);
+			name = RnFilter;
+			sourceTree = "<group>";
+		};
 		58F8288A1924B3E20044C092 = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +162,13 @@
 		58F828951924B3E20044C092 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				58F0527819273C6C006BE37F /* AssetsLibrary.framework */,
+				58F0527619273C64006BE37F /* QuartzCore.framework */,
+				58F0527419273C5C006BE37F /* AVFoundation.framework */,
+				58F0527219273C54006BE37F /* OpenGLES.framework */,
+				58F0527019273C4A006BE37F /* CoreVideo.framework */,
+				58F0526E19273C42006BE37F /* CoreMedia.framework */,
+				58F0526319273B2A006BE37F /* GPUImage.xcodeproj */,
 				58F828961924B3E20044C092 /* Foundation.framework */,
 				58F828981924B3E20044C092 /* CoreGraphics.framework */,
 				58F8289A1924B3E20044C092 /* UIKit.framework */,
@@ -114,12 +180,15 @@
 		58F8289C1924B3E20044C092 /* Renoir */ = {
 			isa = PBXGroup;
 			children = (
+				58F0527B19273DFB006BE37F /* RnFilter */,
 				58F828A51924B3E20044C092 /* AppDelegate.h */,
 				58F828A61924B3E20044C092 /* AppDelegate.m */,
 				58F828A81924B3E20044C092 /* Main_iPhone.storyboard */,
 				58F828AB1924B3E20044C092 /* Main_iPad.storyboard */,
 				58F828AE1924B3E20044C092 /* ViewController.h */,
 				58F828AF1924B3E20044C092 /* ViewController.m */,
+				58F828CE1924B41A0044C092 /* UnkoViewController.h */,
+				58F828CF1924B41A0044C092 /* UnkoViewController.m */,
 				58F828B11924B3E20044C092 /* Images.xcassets */,
 				58F8289D1924B3E20044C092 /* Supporting Files */,
 			);
@@ -218,6 +287,12 @@
 			mainGroup = 58F8288A1924B3E20044C092;
 			productRefGroup = 58F828941924B3E20044C092 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 58F0526419273B2A006BE37F /* Products */;
+					ProjectRef = 58F0526319273B2A006BE37F /* GPUImage.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				58F828921924B3E20044C092 /* Renoir */,
@@ -225,6 +300,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		58F0526A19273B2B006BE37F /* libGPUImage.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libGPUImage.a;
+			remoteRef = 58F0526919273B2B006BE37F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		58F0526C19273B2B006BE37F /* GPUImageTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = GPUImageTests.octest;
+			remoteRef = 58F0526B19273B2B006BE37F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		58F828911924B3E20044C092 /* Resources */ = {
@@ -253,9 +345,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58F0527E19273E92006BE37F /* RnFilterDryBrush.m in Sources */,
 				58F828B01924B3E20044C092 /* ViewController.m in Sources */,
 				58F828A71924B3E20044C092 /* AppDelegate.m in Sources */,
 				58F828A31924B3E20044C092 /* main.m in Sources */,
+				58F828D01924B41B0044C092 /* UnkoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -393,7 +487,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Renoir/Renoir-Prefix.pch";
 				INFOPLIST_FILE = "Renoir/Renoir-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "GPUImage/framework/**";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -406,7 +503,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Renoir/Renoir-Prefix.pch";
 				INFOPLIST_FILE = "Renoir/Renoir-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "GPUImage/framework/**";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -470,6 +570,7 @@
 				58F828CA1924B3E20044C092 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		58F828CB1924B3E20044C092 /* Build configuration list for PBXNativeTarget "RenoirTests" */ = {
 			isa = XCConfigurationList;
@@ -478,6 +579,7 @@
 				58F828CD1924B3E20044C092 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
