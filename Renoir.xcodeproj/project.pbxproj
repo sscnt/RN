@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5819F8FA192799EC002282A0 /* UIDevice+extend.m in Sources */ = {isa = PBXBuildFile; fileRef = 5819F8ED192799EC002282A0 /* UIDevice+extend.m */; };
+		5819F8FB192799EC002282A0 /* UIScreen+extend.m in Sources */ = {isa = PBXBuildFile; fileRef = 5819F8EF192799EC002282A0 /* UIScreen+extend.m */; };
+		5819F8FC192799EC002282A0 /* UIView+extend.m in Sources */ = {isa = PBXBuildFile; fileRef = 5819F8F1192799EC002282A0 /* UIView+extend.m */; };
+		5819F8FD192799EC002282A0 /* UIScrollView+extend.m in Sources */ = {isa = PBXBuildFile; fileRef = 5819F8F3192799EC002282A0 /* UIScrollView+extend.m */; };
+		5819F8FE192799EC002282A0 /* UIImage+extend.m in Sources */ = {isa = PBXBuildFile; fileRef = 5819F8F5192799EC002282A0 /* UIImage+extend.m */; };
+		5819F8FF192799EC002282A0 /* UIViewController+extend.m in Sources */ = {isa = PBXBuildFile; fileRef = 5819F8F7192799EC002282A0 /* UIViewController+extend.m */; };
+		5819F900192799EC002282A0 /* UIImagePickerController+extend.m in Sources */ = {isa = PBXBuildFile; fileRef = 5819F8F9192799EC002282A0 /* UIImagePickerController+extend.m */; };
+		5819F9041927A807002282A0 /* RnCurrentImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 5819F9031927A807002282A0 /* RnCurrentImage.m */; };
 		58F0526F19273C42006BE37F /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58F0526E19273C42006BE37F /* CoreMedia.framework */; };
 		58F0527119273C4A006BE37F /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58F0527019273C4A006BE37F /* CoreVideo.framework */; };
 		58F0527319273C54006BE37F /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58F0527219273C54006BE37F /* OpenGLES.framework */; };
@@ -58,6 +66,22 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5819F8EC192799EC002282A0 /* UIDevice+extend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+extend.h"; sourceTree = "<group>"; };
+		5819F8ED192799EC002282A0 /* UIDevice+extend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+extend.m"; sourceTree = "<group>"; };
+		5819F8EE192799EC002282A0 /* UIScreen+extend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScreen+extend.h"; sourceTree = "<group>"; };
+		5819F8EF192799EC002282A0 /* UIScreen+extend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScreen+extend.m"; sourceTree = "<group>"; };
+		5819F8F0192799EC002282A0 /* UIView+extend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+extend.h"; sourceTree = "<group>"; };
+		5819F8F1192799EC002282A0 /* UIView+extend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+extend.m"; sourceTree = "<group>"; };
+		5819F8F2192799EC002282A0 /* UIScrollView+extend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+extend.h"; sourceTree = "<group>"; };
+		5819F8F3192799EC002282A0 /* UIScrollView+extend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+extend.m"; sourceTree = "<group>"; };
+		5819F8F4192799EC002282A0 /* UIImage+extend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+extend.h"; sourceTree = "<group>"; };
+		5819F8F5192799EC002282A0 /* UIImage+extend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+extend.m"; sourceTree = "<group>"; };
+		5819F8F6192799EC002282A0 /* UIViewController+extend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+extend.h"; sourceTree = "<group>"; };
+		5819F8F7192799EC002282A0 /* UIViewController+extend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+extend.m"; sourceTree = "<group>"; };
+		5819F8F8192799EC002282A0 /* UIImagePickerController+extend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImagePickerController+extend.h"; sourceTree = "<group>"; };
+		5819F8F9192799EC002282A0 /* UIImagePickerController+extend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImagePickerController+extend.m"; sourceTree = "<group>"; };
+		5819F9021927A807002282A0 /* RnCurrentImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RnCurrentImage.h; sourceTree = "<group>"; };
+		5819F9031927A807002282A0 /* RnCurrentImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RnCurrentImage.m; sourceTree = "<group>"; };
 		58F0526319273B2A006BE37F /* GPUImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GPUImage.xcodeproj; path = GPUImage/framework/GPUImage.xcodeproj; sourceTree = "<group>"; };
 		58F0526E19273C42006BE37F /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		58F0527019273C4A006BE37F /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
@@ -122,6 +146,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5819F8E8192799D7002282A0 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				5819F8EC192799EC002282A0 /* UIDevice+extend.h */,
+				5819F8ED192799EC002282A0 /* UIDevice+extend.m */,
+				5819F8EE192799EC002282A0 /* UIScreen+extend.h */,
+				5819F8EF192799EC002282A0 /* UIScreen+extend.m */,
+				5819F8F0192799EC002282A0 /* UIView+extend.h */,
+				5819F8F1192799EC002282A0 /* UIView+extend.m */,
+				5819F8F2192799EC002282A0 /* UIScrollView+extend.h */,
+				5819F8F3192799EC002282A0 /* UIScrollView+extend.m */,
+				5819F8F4192799EC002282A0 /* UIImage+extend.h */,
+				5819F8F5192799EC002282A0 /* UIImage+extend.m */,
+				5819F8F6192799EC002282A0 /* UIViewController+extend.h */,
+				5819F8F7192799EC002282A0 /* UIViewController+extend.m */,
+				5819F8F8192799EC002282A0 /* UIImagePickerController+extend.h */,
+				5819F8F9192799EC002282A0 /* UIImagePickerController+extend.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
+		5819F9011927A773002282A0 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				5819F9021927A807002282A0 /* RnCurrentImage.h */,
+				5819F9031927A807002282A0 /* RnCurrentImage.m */,
+			);
+			name = Shared;
+			sourceTree = "<group>";
+		};
 		58F0526419273B2A006BE37F /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -180,7 +234,9 @@
 		58F8289C1924B3E20044C092 /* Renoir */ = {
 			isa = PBXGroup;
 			children = (
+				5819F8E8192799D7002282A0 /* Categories */,
 				58F0527B19273DFB006BE37F /* RnFilter */,
+				5819F9011927A773002282A0 /* Shared */,
 				58F828A51924B3E20044C092 /* AppDelegate.h */,
 				58F828A61924B3E20044C092 /* AppDelegate.m */,
 				58F828A81924B3E20044C092 /* Main_iPhone.storyboard */,
@@ -346,9 +402,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				58F0527E19273E92006BE37F /* RnFilterDryBrush.m in Sources */,
+				5819F8FE192799EC002282A0 /* UIImage+extend.m in Sources */,
+				5819F9041927A807002282A0 /* RnCurrentImage.m in Sources */,
+				5819F8FB192799EC002282A0 /* UIScreen+extend.m in Sources */,
+				5819F8FA192799EC002282A0 /* UIDevice+extend.m in Sources */,
+				5819F8FD192799EC002282A0 /* UIScrollView+extend.m in Sources */,
+				5819F8FF192799EC002282A0 /* UIViewController+extend.m in Sources */,
 				58F828B01924B3E20044C092 /* ViewController.m in Sources */,
 				58F828A71924B3E20044C092 /* AppDelegate.m in Sources */,
 				58F828A31924B3E20044C092 /* main.m in Sources */,
+				5819F8FC192799EC002282A0 /* UIView+extend.m in Sources */,
+				5819F900192799EC002282A0 /* UIImagePickerController+extend.m in Sources */,
 				58F828D01924B41B0044C092 /* UnkoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

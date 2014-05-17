@@ -33,9 +33,12 @@
 
 @property (nonatomic, assign) int intensityLevel;
 
+@property(readwrite, nonatomic) CGFloat texelWidth;
+@property(readwrite, nonatomic) CGFloat texelHeight;
+
 + (NSString *)vertexShaderForStandardBlurOfRadius:(NSUInteger)blurRadius sigma:(CGFloat)sigma;
 + (NSString *)vertexShaderForOptimizedBlurOfRadius:(NSUInteger)blurRadius sigma:(CGFloat)sigma;
-+ (NSString *)fragmentShaderForOptimizedBlurOfRadius:(NSUInteger)blurRadius sigma:(CGFloat)sigma intensityLevel:(int)intensityLevel;
+- (NSString *)fragmentShaderForOptimizedBlurOfRadius:(NSUInteger)blurRadius sigma:(CGFloat)sigma;
 
 - (void)switchToVertexShader:(NSString *)newVertexShader fragmentShader:(NSString *)newFragmentShader;
 

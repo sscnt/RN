@@ -38,7 +38,7 @@
 {
     _intensityLevel = 32;
     NSString *currentGaussianBlurVertexShader = [[self class] vertexShaderForOptimizedBlurOfRadius:4 sigma:2.0];
-    NSString *currentGaussianBlurFragmentShader = [[self class] fragmentShaderForOptimizedBlurOfRadius:4 sigma:2.0 intensityLevel:32];
+    NSString *currentGaussianBlurFragmentShader = [self fragmentShaderForOptimizedBlurOfRadius:4 sigma:2.0];
     
     return [self initWithFirstStageVertexShaderFromString:currentGaussianBlurVertexShader firstStageFragmentShaderFromString:currentGaussianBlurFragmentShader secondStageVertexShaderFromString:currentGaussianBlurVertexShader secondStageFragmentShaderFromString:currentGaussianBlurFragmentShader];
 }
@@ -176,7 +176,7 @@
     return shaderString;
 }
 
-+ (NSString *)fragmentShaderForOptimizedBlurOfRadius:(NSUInteger)blurRadius sigma:(CGFloat)sigma intensityLevel:(int)intensityLevel;
+- (NSString *)fragmentShaderForOptimizedBlurOfRadius:(NSUInteger)blurRadius sigma:(CGFloat)sigma;
 {
     if (blurRadius < 1)
     {
@@ -231,8 +231,7 @@
          return ceil(a);\n\
      }\n\
      void main()\n\
-     {\n\
-     lowp vec4 sum = vec4(0.0);\n", (unsigned long)(1 + (numberOfOptimizedOffsets * 2)), intensityLevel / 255.0f ];
+     {\n", (unsigned long)(1 + (numberOfOptimizedOffsets * 2)), _intensityLevel / 255.0f ];
 #else
     [shaderString appendFormat:@"\
      uniform sampler2D inputImageTexture;\n\
@@ -251,11 +250,10 @@
      return ceil(a);\n\
      }\n\
      void main()\n\
-     {\n\
-     vec4 sum = vec4(0.0);\n", 1 + (numberOfOptimizedOffsets * 2), intensityLevel / 255.0f ];
+     {\n", 1 + (numberOfOptimizedOffsets * 2), intensityLevel / 255.0f ];
 #endif
     
-    int max_length = intensityLevel;
+    int max_length = _intensityLevel;
     
     [shaderString appendFormat:@"\
      mediump float sumR[%d];\n\
@@ -267,19 +265,23 @@
      int index = 0;\n\
      int curMax = 0;\n\
      int maxIndex = 0;\n\
-     \n", max_length, max_length, max_length, max_length];
+     for(int i = 0;i < %d;i++){\n\
+        sumR[i] = 0.0;\n\
+        sumG[i] = 0.0;\n\
+        sumB[i] = 0.0;\n\
+        intensity_count[i] = 0;\n\
+     }\n\
+     \n", max_length, max_length, max_length, max_length, max_length];
 
-    // Inner texture loop
-    [shaderString appendFormat:@"sum += texture2D(inputImageTexture, blurCoordinates[0]) * %f;\n", standardGaussianWeights[0]];
-    
+    /*
     [shaderString appendFormat:@"\
      pixel = texture2D(inputImageTexture, blurCoordinates[0]);\n\
      current_intensity = (pixel.r / 3.0 + pixel.g / 3.0 + pixel.b / 3.0) * intensity_level;\n\
      index = int(round(current_intensity * 255.0));\n\
      intensity_count[index] += 1;\n\
-     sumR[index] = pixel.r;\n\
-     sumG[index] = pixel.g;\n\
-     sumB[index] = pixel.b;\n\
+     sumR[index] += pixel.r;\n\
+     sumG[index] += pixel.g;\n\
+     sumB[index] += pixel.b;\n\
      if(curMax < intensity_count[index]){\n\
         curMax = intensity_count[index];\n\
         maxIndex = index;\n\
@@ -297,9 +299,9 @@
          current_intensity = (pixel.r / 3.0 + pixel.g / 3.0 + pixel.b / 3.0) * intensity_level;\n\
          index = int(round(current_intensity * 255.0));\n\
          intensity_count[index] += 1;\n\
-         sumR[index] = pixel.r;\n\
-         sumG[index] = pixel.g;\n\
-         sumB[index] = pixel.b;\n\
+         sumR[index] += pixel.r;\n\
+         sumG[index] += pixel.g;\n\
+         sumB[index] += pixel.b;\n\
          if(curMax < intensity_count[index]){\n\
             curMax = intensity_count[index];\n\
             maxIndex = index;\n\
@@ -311,82 +313,71 @@
          current_intensity = (pixel.r / 3.0 + pixel.g / 3.0 + pixel.b / 3.0) * intensity_level;\n\
          index = int(round(current_intensity * 255.0));\n\
          intensity_count[index] += 1;\n\
-         sumR[index] = pixel.r;\n\
-         sumG[index] = pixel.g;\n\
-         sumB[index] = pixel.b;\n\
+         sumR[index] += pixel.r;\n\
+         sumG[index] += pixel.g;\n\
+         sumB[index] += pixel.b;\n\
          if(curMax < intensity_count[index]){\n\
             curMax = intensity_count[index];\n\
             maxIndex = index;\n\
          }\n\
          \n", (unsigned long)((currentBlurCoordinateIndex * 2) + 2)];
     }
+    */
     
-    // If the number of required samples exceeds the amount we can pass in via varyings, we have to do dependent texture reads in the fragment shader
-    if (trueNumberOfOptimizedOffsets > numberOfOptimizedOffsets)
-    {
 #if TARGET_IPHONE_SIMULATOR || TARGET_OS_IPHONE
-        [shaderString appendString:@"highp vec2 singleStepOffset = vec2(texelWidthOffset, texelHeightOffset);\n"];
+    [shaderString appendFormat:@"\
+     highp vec2 widthStep = vec2(texelWidthOffset, 0.0);\n\
+     highp vec2 heightStep = vec2(0.0, texelHeightOffset);\n"];
 #else
-        [shaderString appendString:@"vec2 singleStepOffset = vec2(texelWidthOffset, texelHeightOffset);\n"];
+    [shaderString appendFormat:@"\
+     vec2 widthStep = vec2(texelWidthOffset, 0.0);\n\
+     vec2 heightStep = vec2(0.0, texelHeightOffset);\n"];
 #endif
-        
-        for (NSUInteger currentOverlowTextureRead = numberOfOptimizedOffsets; currentOverlowTextureRead < trueNumberOfOptimizedOffsets; currentOverlowTextureRead++)
-        {
-            GLfloat firstWeight = standardGaussianWeights[currentOverlowTextureRead * 2 + 1];
-            GLfloat secondWeight = standardGaussianWeights[currentOverlowTextureRead * 2 + 2];
-            
-            GLfloat optimizedWeight = firstWeight + secondWeight;
-            GLfloat optimizedOffset = (firstWeight * (currentOverlowTextureRead * 2 + 1) + secondWeight * (currentOverlowTextureRead * 2 + 2)) / optimizedWeight;
-            
+    
+    for (int x = -(int)sigma; x <= (int)sigma; x++) {
+        for(int y = -(int)sigma; y <= (int)sigma; y++){
             [shaderString appendFormat:@"\
-             pixel = texture2D(inputImageTexture, blurCoordinates[0] + singleStepOffset * %f);\n\
+             pixel = texture2D(inputImageTexture, blurCoordinates[0] + widthStep * %f + heightStep * %f);\n\
              current_intensity = (pixel.r / 3.0 + pixel.g / 3.0 + pixel.b / 3.0) * intensity_level;\n\
-             index = int(round(current_intensity * 255.0));\n\
+             index = int(floor(current_intensity * 255.0));\n\
              intensity_count[index] += 1;\n\
-             sumR[index] = pixel.r;\n\
-             sumG[index] = pixel.g;\n\
-             sumB[index] = pixel.b;\n\
-             if(curMax < intensity_count[index]){\n\
-                curMax = intensity_count[index];\n\
-                maxIndex = index;\n\
-             }\n\
-             \n", optimizedOffset];
-            
-            [shaderString appendFormat:@"\
-             pixel = texture2D(inputImageTexture, blurCoordinates[0] + singleStepOffset * %f);\n\
-             current_intensity = (pixel.r / 3.0 + pixel.g / 3.0 + pixel.b / 3.0) * intensity_level;\n\
-             index = int(round(current_intensity * 255.0));\n\
-             intensity_count[index] += 1;\n\
-             sumR[index] = pixel.r;\n\
-             sumG[index] = pixel.g;\n\
-             sumB[index] = pixel.b;\n\
-             if(curMax < intensity_count[index]){\n\
-                curMax = intensity_count[index];\n\
-                maxIndex = index;\n\
-             }\n\
-             \n", optimizedOffset];
-            
+             sumR[index] += pixel.r;\n\
+             sumG[index] += pixel.g;\n\
+             sumB[index] += pixel.b;\n\
+             \n", (float)x, (float)y];
         }
     }
     
+    
     // Footer
-    [shaderString appendString:@"\
+    [shaderString appendFormat:@"\
+     maxIndex = 0;\n\
+     curMax = intensity_count[maxIndex];\n\
+     for( int i = 1; i < %d; i++ ) {\n\
+         if( intensity_count[i] > curMax ) {\n\
+             curMax = intensity_count[i];\n\
+             maxIndex = i;\n\
+         }\n\
+     }\n\
      if(curMax > 0){\n\
-        pixel.r = sumR[maxindex] / float(curMax);\n\
-        pixel.g = sumG[maxindex] / float(curMax);\n\
-        pixel.b = sumB[maxindex] / float(curMax);\n\
+        pixel.r = sumR[maxIndex] / float(curMax);\n\
+        pixel.g = sumG[maxIndex] / float(curMax);\n\
+        pixel.b = sumB[maxIndex] / float(curMax);\n\
      }\n\
      gl_FragColor = pixel;\n\
-     }\n"];
+     }\n", max_length];
     
     free(standardGaussianWeights);
-    NSLog(shaderString);
+    //NSLog(shaderString);
     return shaderString;
 }
 
 - (void)setupFilterForSize:(CGSize)filterFrameSize;
 {
     [super setupFilterForSize:filterFrameSize];
+    
+    verticalPassTexelWidthOffset = 1.0 / filterFrameSize.width;
+    horizontalPassTexelHeightOffset = 1.0 / filterFrameSize.height;
     
     if (shouldResizeBlurRadiusWithImageSize == YES)
     {
@@ -512,7 +503,7 @@
     //        NSLog(@"Blur radius: %f, calculated sample radius: %d", _blurRadiusInPixels, calculatedSampleRadius);
     //
     NSString *newGaussianBlurVertexShader = [[self class] vertexShaderForOptimizedBlurOfRadius:calculatedSampleRadius sigma:_blurRadiusInPixels];
-    NSString *newGaussianBlurFragmentShader = [[self class] fragmentShaderForOptimizedBlurOfRadius:calculatedSampleRadius sigma:_blurRadiusInPixels intensityLevel:_intensityLevel];
+    NSString *newGaussianBlurFragmentShader = [self fragmentShaderForOptimizedBlurOfRadius:calculatedSampleRadius sigma:_blurRadiusInPixels];
     
     //        NSLog(@"Optimized vertex shader: \n%@", newGaussianBlurVertexShader);
     //        NSLog(@"Optimized fragment shader: \n%@", newGaussianBlurFragmentShader);

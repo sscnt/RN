@@ -43,14 +43,17 @@
 
 - (void)processWithImage:(UIImage*)image
 {
+    [self _processWithImage:image];
+    
     GPUImagePicture* pic = [[GPUImagePicture alloc] initWithImage:image];
     RnFilterDryBrush* filter = [[RnFilterDryBrush alloc] init];
-    filter.blurRadiusInPixels = 10.0f;
+    filter.blurRadiusInPixels = 3.0f;
     filter.intensityLevel = 64;
     [pic addTarget:filter];
     [pic processImage];
     
-    UIImageView* imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0.0f, 100.0f, 320.0f, image.size.height * 320.0f / image.size.width)];
+    float height = image.size.height * 320.0f / image.size.width;
+    UIImageView* imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0.0f, [self.view viewWithTag:1].frame.origin.y + [self.view viewWithTag:1].frame.size.height, 320.0f, height)];
     imgView.image = [filter imageFromCurrentlyProcessedOutput];
     [self.view addSubview:imgView];
 }
@@ -91,12 +94,9 @@
     int X,Y, x,y;
     int curMax = 0;
     int maxIndex = 0;
-    int RADIUS = 8;
-    int fractal_radius = RADIUS;
+    int RADIUS = 3;
     int radius = 0;
     int N = 0;
-    int fractal_pxs = (2 * fractal_radius + 1) * (2 * fractal_radius + 1);
-    int* fractal_intensities = (int*)malloc(sizeof(int) * fractal_pxs);
     double variance = 0.0;
     double average = 0.0;
     int intensity_level = 64;
@@ -125,7 +125,6 @@
             average = 0.0;
             radius = RADIUS;
             N = 0;
-            memset(fractal_intensities, 0, sizeof(int) * fractal_pxs);
             memset(&sumR[0], 0, sizeof(sumR));
             memset(&sumG[0], 0, sizeof(sumG));
             memset(&sumB[0], 0, sizeof(sumB));
@@ -134,51 +133,6 @@
 			UInt8* cpx = buffer + Y * bytesPerRow + X * 4;
             
 			// RGBの値を取得する
-            
-            /* Split fractal. */
-            for(y = -fractal_radius; y <= fractal_radius; y++) {
-                if (Y + y < 0 || Y + y >= height) {
-                    continue;
-                }
-                for(x = -fractal_radius; x <= fractal_radius; x++) {
-                    if (X + x >= width || X + x < 0) {
-                        continue;
-                    }
-                    N++;
-                    index = ((Y + y) * width * 4) + ((X + x) * 4);
-                    pixel = buffer + index;
-                    r = *(pixel + 0);
-                    g = *(pixel + 1);
-                    b = *(pixel + 2);
-                    current_intensity = (r + g + b)/3;
-                    
-                    index = ((y + fractal_radius) * (2 * fractal_radius + 1)) + (x + fractal_radius);
-                    fractal_intensities[index] = current_intensity;
-                    
-                    average += current_intensity / 255.0;
-                }
-            }
-            
-            average /= (double)N;
-            
-            //NSLog(@"average: %f", average);
-            
-            for (int i = 0; i < fractal_pxs; i++) {
-                variance += (fractal_intensities[i] / 255.0 - average) * (fractal_intensities[i] / 255.0 - average);
-            }
-            
-            variance /= (double)N;
-            //NSLog(@"variance: %lf", variance);
-            if (variance > 0.1) {
-                radius = RADIUS / 3;
-            } else if (variance > 0.05) {
-                radius = RADIUS / 2;
-            }
-            if (max_variance < variance) {
-                max_variance = variance;
-            }else if(min_variance > variance){
-                min_variance = variance;
-            }
             
             /* Calculate the highest intensity Neighbouring Pixels. */
             for(y = -radius; y <= radius; y++) {
@@ -256,10 +210,10 @@
 	CFRelease(tmpData2);
     CFRelease(inputData);
     CFRelease(outputData);
-    free(fractal_intensities);
     
     UIImageView* imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0.0f, 100.0f, 320.0f, height * 320.0f / width)];
     imgView.image = effectedImage;
+    imgView.tag = 1;
     [self.view addSubview:imgView];
 }
 
