@@ -43,21 +43,16 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)processWithImage:(UIImage*)image
+- (UIImage*)processWithImage:(UIImage*)image
 {
-    [self _processWithImage:image];
-    
     GPUImagePicture* pic = [[GPUImagePicture alloc] initWithImage:image];
     RnFilterDryBrush* filter = [[RnFilterDryBrush alloc] init];
-    filter.blurRadiusInPixels = 3.0f;
+    filter.blurRadiusInPixels = 5.0f;
     filter.intensityLevel = 64;
     [pic addTarget:filter];
     [pic processImage];
-    
-    float height = image.size.height * 320.0f / image.size.width;
-    UIImageView* imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0.0f, [self.view viewWithTag:1].frame.origin.y + [self.view viewWithTag:1].frame.size.height, 320.0f, height)];
-    imgView.image = [filter imageFromCurrentlyProcessedOutput];
-    [self.view addSubview:imgView];
+    [pic removeAllTargets];
+    return [filter imageFromCurrentlyProcessedOutput];
 }
 
 - (void)drawAtIndex:(int)index
@@ -91,6 +86,8 @@
         dispatch_async(q_main, ^{
             if (_self.currentIndex == 6) {
                 UIImage* image = [RnCurrentImage mergeOriginalImageAndDeleteCache:YES];
+                
+                UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil);
                 
                 imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0.0f, 100.0f, 320.0f, image.size.height * 320.0f / image.size.width)];
                 imgView.image = image;
@@ -130,8 +127,8 @@
     int X,Y, x,y;
     int curMax = 0;
     int maxIndex = 0;
-    int RADIUS = 3;
-    int radius = 0;
+    int RADIUS = 5;
+    int radius = RADIUS;
     int N = 0;
     double variance = 0.0;
     double average = 0.0;
@@ -154,6 +151,9 @@
     UInt8 *buffer = (UInt8 *)CFDataGetBytePtr(tmpData);
     UInt8 *pOutBuffer = (UInt8 *)CFDataGetMutableBytePtr(outputData);
     
+    int r2 = radius * radius;
+    int cr = 0;
+    
     
 	// ビットマップに効果を与える
 	for (Y = RADIUS ; Y < (height - RADIUS); Y++)
@@ -174,6 +174,10 @@
             /* Calculate the highest intensity Neighbouring Pixels. */
             for(y = -radius; y <= radius; y++) {
                 for(x = -radius; x <= radius; x++) {
+                    cr = x * x + y * y;
+                    if (cr > r2) {
+                        continue;
+                    }
                     index = ((Y + y) * width * 4) + ((X + x) * 4);
                     pixel = buffer + index;
                     
@@ -268,7 +272,7 @@
     }
     
     if (imageExists) {
-        [self performSelector:@selector(draw) withObject:nil afterDelay:5.0f];
+        [self performSelector:@selector(draw) withObject:nil afterDelay:0.5f];
         return;
     }
     
@@ -285,7 +289,7 @@
              UIImage* imageOriginal = [[UIImage alloc] initWithCGImage:representation.fullResolutionImage];
              [RnCurrentImage saveOriginalImageIn4Parts:imageOriginal];
          }
-         [self performSelector:@selector(draw) withObject:nil afterDelay:5.0f];
+         [self performSelector:@selector(draw) withObject:nil afterDelay:0.5f];
      }
             failureBlock:^(NSError *error)
      {

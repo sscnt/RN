@@ -334,8 +334,15 @@
      vec2 heightStep = vec2(0.0, texelHeightOffset);\n"];
 #endif
     
+    int r2 = sigma * sigma;
+    int cr = 0;
+    
     for (int x = -(int)sigma; x <= (int)sigma; x++) {
         for(int y = -(int)sigma; y <= (int)sigma; y++){
+            cr = x * x + y * y;
+            if (cr > r2) {
+                continue;
+            }
             [shaderString appendFormat:@"\
              pixel = texture2D(inputImageTexture, blurCoordinates[0] + widthStep * %f + heightStep * %f);\n\
              current_intensity = (pixel.r / 3.0 + pixel.g / 3.0 + pixel.b / 3.0) * intensity_level;\n\
