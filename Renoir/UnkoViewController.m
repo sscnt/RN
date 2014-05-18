@@ -19,6 +19,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        
     }
     return self;
 }
@@ -26,6 +27,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    _currentIndex = 1;
     // Do any additional setup after loading the view.
     
     
@@ -58,45 +60,66 @@
     [self.view addSubview:imgView];
 }
 
+- (void)drawAtIndex:(int)index
+{
+    UIImage* image = [self _processWithImage:[RnCurrentImage exploadedOriginalImageAtIndex:index]];
+    [RnCurrentImage saveExploadedOriginalImage:image atIndex:index];
+}
+
 - (void)draw
 {
+    if (_currentIndex == 6) {
+        _currentIndex = 1;
+        return;
+    }
     NSLog(@"draw!");
     
-    UIImage* image = [RnCurrentImage mergeOriginalImageAndDeleteCache:YES];
+    __block UnkoViewController* _self = self;
+    __block UIImageView* imgView = nil;
+    dispatch_queue_t q_global = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    dispatch_queue_t q_main = dispatch_get_main_queue();
+    dispatch_async(q_global, ^{
+        @autoreleasepool
+        {
+            if (_self.currentIndex == 5) {
+                
+            }else{
+                [self drawAtIndex:_self.currentIndex];
+            }
+            _self.currentIndex++;
+        }
+        dispatch_async(q_main, ^{
+            if (_self.currentIndex == 6) {
+                UIImage* image = [RnCurrentImage mergeOriginalImageAndDeleteCache:YES];
+                
+                imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0.0f, 100.0f, 320.0f, image.size.height * 320.0f / image.size.width)];
+                imgView.image = image;
+                imgView.tag = 1;
+                [_self.view addSubview:imgView];
+            }
+            //[_self performSelector:@selector(draw) withObject:nil afterDelay:3.0f];
+            [_self draw];
+        });
+    });
     
-    UIImageView* imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0.0f, 100.0f, 320.0f, image.size.height * 320.0f / image.size.width)];
-    imgView.image = image;
-    imgView.tag = 1;
-    [self.view addSubview:imgView];
     
 }
 
-- (void)_processWithImage:(UIImage*)image
+- (UIImage*)_processWithImage:(UIImage*)image
 {
-    
 	// CGImageを取得する
-	CGImageRef cgImage;
-	cgImage = image.CGImage;
+	CGImageRef cgImage = image.CGImage;
     
 	// 画像情報を取得する
-	size_t width;
-	size_t height;
-	size_t bitsPerComponent;
-	size_t bitsPerPixel;
-	size_t bytesPerRow;
-	CGColorSpaceRef colorSpace;
-	CGBitmapInfo bitmapInfo;
-	bool shouldInterpolate;
-	CGColorRenderingIntent intent;
-	width = CGImageGetWidth(cgImage);
-	height = CGImageGetHeight(cgImage);
-	bitsPerComponent = CGImageGetBitsPerComponent(cgImage);
-	bitsPerPixel = CGImageGetBitsPerPixel(cgImage);
-	bytesPerRow = CGImageGetBytesPerRow(cgImage);
-	colorSpace = CGImageGetColorSpace(cgImage);
-	bitmapInfo = CGImageGetBitmapInfo(cgImage);
-	shouldInterpolate = CGImageGetShouldInterpolate(cgImage);
-	intent = CGImageGetRenderingIntent(cgImage);
+	size_t width = CGImageGetWidth(cgImage);
+	size_t height = CGImageGetHeight(cgImage);
+	size_t bitsPerComponent = CGImageGetBitsPerComponent(cgImage);
+	size_t bitsPerPixel = CGImageGetBitsPerPixel(cgImage);
+	size_t bytesPerRow = CGImageGetBytesPerRow(cgImage);
+	CGColorSpaceRef colorSpace = CGImageGetColorSpace(cgImage);
+	CGBitmapInfo bitmapInfo = CGImageGetBitmapInfo(cgImage);
+	bool shouldInterpolate = CGImageGetShouldInterpolate(cgImage);
+	CGColorRenderingIntent intent = CGImageGetRenderingIntent(cgImage);
     
     int index = 0;
     int intensity_count[256] = {0};
@@ -119,12 +142,16 @@
     
 	// データプロバイダを取得する
 	CGDataProviderRef dataProvider = CGImageGetDataProvider(cgImage);
-    
     CFDataRef tmpData = CGDataProviderCopyData(dataProvider);
-    CFMutableDataRef inputData = CFDataCreateMutableCopy(0, 0, tmpData);
     CFDataRef tmpData2 = CGDataProviderCopyData(dataProvider);
+    
+    //CGDataProviderRelease(dataProvider);
+    
     CFMutableDataRef outputData = CFDataCreateMutableCopy(0, 0, tmpData2);
-    UInt8 *buffer = (UInt8 *)CFDataGetMutableBytePtr(inputData);
+    
+    CFRelease(tmpData2);
+    
+    UInt8 *buffer = (UInt8 *)CFDataGetBytePtr(tmpData);
     UInt8 *pOutBuffer = (UInt8 *)CFDataGetMutableBytePtr(outputData);
     
     
@@ -141,9 +168,6 @@
             memset(&sumR[0], 0, sizeof(sumR));
             memset(&sumG[0], 0, sizeof(sumG));
             memset(&sumB[0], 0, sizeof(sumB));
-            
-			// ピクセルのポインタを取得する
-			UInt8* cpx = buffer + Y * bytesPerRow + X * 4;
             
 			// RGBの値を取得する
             
@@ -198,36 +222,31 @@
     NSLog(@"max: %lf", max_variance);
     NSLog(@"min: %lf", min_variance);
     
+    CFIndex length = CFDataGetLength(tmpData);
+	CFRelease(tmpData);
+    
+    
 	// 効果を与えたデータを作成する
-	CFDataRef effectedData;
-	effectedData = CFDataCreate(NULL, pOutBuffer, CFDataGetLength(tmpData));
+	CFDataRef effectedData = CFDataCreate(NULL, pOutBuffer, length);
+    
+    
     
 	// 効果を与えたデータプロバイダを作成する
-	CGDataProviderRef effectedDataProvider;
-	effectedDataProvider = CGDataProviderCreateWithCFData(effectedData);
+	CGDataProviderRef effectedDataProvider = CGDataProviderCreateWithCFData(effectedData);
     
 	// 画像を作成する
-	CGImageRef effectedCgImage = CGImageCreate(
-                                               width, height,
-                                               bitsPerComponent, bitsPerPixel, bytesPerRow,
-                                               colorSpace, bitmapInfo, effectedDataProvider,
-                                               NULL, shouldInterpolate, intent);
+	CGImageRef effectedCgImage = CGImageCreate(width, height, bitsPerComponent, bitsPerPixel, bytesPerRow, colorSpace, bitmapInfo, effectedDataProvider, NULL, shouldInterpolate, intent);
+	CGDataProviderRelease(effectedDataProvider);
     
     UIImage* effectedImage = [[UIImage alloc] initWithCGImage:effectedCgImage];
     
 	// 作成したデータを解放する
-	CGImageRelease(effectedCgImage);
-	CFRelease(effectedDataProvider);
 	CFRelease(effectedData);
-	CFRelease(tmpData);
-	CFRelease(tmpData2);
-    CFRelease(inputData);
+	CGImageRelease(effectedCgImage);
+    CGColorSpaceRelease(colorSpace);
     CFRelease(outputData);
     
-    UIImageView* imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0.0f, 100.0f, 320.0f, height * 320.0f / width)];
-    imgView.image = effectedImage;
-    imgView.tag = 1;
-    [self.view addSubview:imgView];
+    return effectedImage;
 }
 
 #pragma mark  delegate
@@ -249,7 +268,7 @@
     }
     
     if (imageExists) {
-        [self draw];
+        [self performSelector:@selector(draw) withObject:nil afterDelay:5.0f];
         return;
     }
     
@@ -266,7 +285,7 @@
              UIImage* imageOriginal = [[UIImage alloc] initWithCGImage:representation.fullResolutionImage];
              [RnCurrentImage saveOriginalImageIn4Parts:imageOriginal];
          }
-         [_self draw];
+         [self performSelector:@selector(draw) withObject:nil afterDelay:5.0f];
      }
             failureBlock:^(NSError *error)
      {
@@ -289,9 +308,12 @@
 {
     for (UIView* subview in self.view.subviews) {
         if ([subview isKindOfClass:[UIImageView class]]  ) {
+            ((UIImageView*)subview).image = nil;
             [subview removeFromSuperview];
         }
     }
+    
+    [RnCurrentImage cleanCache];
     
     UIImagePickerController *pickerController = [[UIImagePickerController alloc] init];
     pickerController.delegate = self;

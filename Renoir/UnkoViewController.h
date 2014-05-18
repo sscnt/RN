@@ -14,4 +14,6 @@
 
 @interface UnkoViewController : UIViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 
+@property (nonatomic, assign) int currentIndex;
+
 @end

@@ -184,7 +184,10 @@ NSString* const pathForOriginalImage = @"tmp/original_image";
 + (UIImage *)mergeOriginalImageAndDeleteCache:(BOOL)del
 {
     CGSize size = [self instance].originalImageSize;
-    UIGraphicsBeginImageContext(CGSizeMake(size.width, size.height));
+    
+    if ([self exploadedOriginalImageAtIndex:1] == nil) {
+        return nil;
+    }
     
     float padding = 3.0 * size.width / 1280.0f;
     float cropWidth = floor(size.width / 2.0f);
@@ -194,29 +197,32 @@ NSString* const pathForOriginalImage = @"tmp/original_image";
     float restWidth = size.width - cropWidth;
     float restHeight = size.height - cropHeight;
     
+    UIGraphicsBeginImageContext(CGSizeMake(size.width, size.height));
+    
+    
     //// 1
-    @autoreleasepool {
+    {
         [[self exploadedOriginalImageAtIndex:1] drawAtPoint:CGPointMake(0.0f, 0.0f)];
         if (del) {
             [self deleteExploadedOriginalImageAtIndex:1];
         }
     }
     //// 2
-    @autoreleasepool {
+    {
         [[[self exploadedOriginalImageAtIndex:2] croppedImage:CGRectMake(padding, 0.0f, restWidth, cropHeight)] drawAtPoint:CGPointMake(cropWidth, 0.0f)];
         if (del) {
             [self deleteExploadedOriginalImageAtIndex:2];
         }
     }
     //// 3
-    @autoreleasepool {
+    {
         [[[self exploadedOriginalImageAtIndex:3] croppedImage:CGRectMake(0.0f, padding, cropWidth, restHeight)] drawAtPoint:CGPointMake(0.0f, cropHeight)];
         if (del) {
             [self deleteExploadedOriginalImageAtIndex:3];
         }
     }
     //// 4
-    @autoreleasepool {
+    {
         [[[self exploadedOriginalImageAtIndex:4] croppedImage:CGRectMake(padding, padding, restWidth, restHeight)] drawAtPoint:CGPointMake(cropWidth, cropHeight)];
         if (del) {
             [self deleteExploadedOriginalImageAtIndex:4];
