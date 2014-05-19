@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5808B5CB192925FF00B94E07 /* RnViewControllerRoot.m in Sources */ = {isa = PBXBuildFile; fileRef = 5808B5CA192925FF00B94E07 /* RnViewControllerRoot.m */; };
+		5808B5CE1929261D00B94E07 /* RnViewControllerConfirmation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5808B5CD1929261D00B94E07 /* RnViewControllerConfirmation.m */; };
+		5808B5D1192926B900B94E07 /* RnViewControllerFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 5808B5D0192926B900B94E07 /* RnViewControllerFrame.m */; };
+		5808B5D4192926CE00B94E07 /* RnViewControllerSaturation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5808B5D3192926CE00B94E07 /* RnViewControllerSaturation.m */; };
+		5808B5D71929270E00B94E07 /* RnViewControllerColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 5808B5D61929270E00B94E07 /* RnViewControllerColor.m */; };
+		5808B5DA1929279700B94E07 /* RnViewControllerExport.m in Sources */ = {isa = PBXBuildFile; fileRef = 5808B5D91929279700B94E07 /* RnViewControllerExport.m */; };
+		5809F2441929F93F00F1296E /* RnViewControllerHome.m in Sources */ = {isa = PBXBuildFile; fileRef = 5809F2431929F93F00F1296E /* RnViewControllerHome.m */; };
+		5809F24C1929FAB100F1296E /* RnViewHomeLauncher.m in Sources */ = {isa = PBXBuildFile; fileRef = 5809F24B1929FAB100F1296E /* RnViewHomeLauncher.m */; };
 		5819F8FA192799EC002282A0 /* UIDevice+extend.m in Sources */ = {isa = PBXBuildFile; fileRef = 5819F8ED192799EC002282A0 /* UIDevice+extend.m */; };
 		5819F8FB192799EC002282A0 /* UIScreen+extend.m in Sources */ = {isa = PBXBuildFile; fileRef = 5819F8EF192799EC002282A0 /* UIScreen+extend.m */; };
 		5819F8FC192799EC002282A0 /* UIView+extend.m in Sources */ = {isa = PBXBuildFile; fileRef = 5819F8F1192799EC002282A0 /* UIView+extend.m */; };
@@ -23,6 +31,9 @@
 		58F0527919273C6C006BE37F /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58F0527819273C6C006BE37F /* AssetsLibrary.framework */; };
 		58F0527A19273C73006BE37F /* libGPUImage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 58F0526A19273B2B006BE37F /* libGPUImage.a */; };
 		58F0527E19273E92006BE37F /* RnFilterDryBrush.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F0527D19273E92006BE37F /* RnFilterDryBrush.m */; };
+		58F444FB192A323800D2C512 /* RnViewHomeGallery.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F444FA192A323800D2C512 /* RnViewHomeGallery.m */; };
+		58F44501192A362800D2C512 /* RnCurrentSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F44500192A362800D2C512 /* RnCurrentSettings.m */; };
+		58F44504192A3BB900D2C512 /* RnViewHomeGalleryItemButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F44503192A3BB900D2C512 /* RnViewHomeGalleryItemButton.m */; };
 		58F828971924B3E20044C092 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58F828961924B3E20044C092 /* Foundation.framework */; };
 		58F828991924B3E20044C092 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58F828981924B3E20044C092 /* CoreGraphics.framework */; };
 		58F8289B1924B3E20044C092 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58F8289A1924B3E20044C092 /* UIKit.framework */; };
@@ -66,6 +77,22 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5808B5C9192925FF00B94E07 /* RnViewControllerRoot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RnViewControllerRoot.h; sourceTree = "<group>"; };
+		5808B5CA192925FF00B94E07 /* RnViewControllerRoot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RnViewControllerRoot.m; sourceTree = "<group>"; };
+		5808B5CC1929261D00B94E07 /* RnViewControllerConfirmation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RnViewControllerConfirmation.h; sourceTree = "<group>"; };
+		5808B5CD1929261D00B94E07 /* RnViewControllerConfirmation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RnViewControllerConfirmation.m; sourceTree = "<group>"; };
+		5808B5CF192926B900B94E07 /* RnViewControllerFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RnViewControllerFrame.h; sourceTree = "<group>"; };
+		5808B5D0192926B900B94E07 /* RnViewControllerFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RnViewControllerFrame.m; sourceTree = "<group>"; };
+		5808B5D2192926CE00B94E07 /* RnViewControllerSaturation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RnViewControllerSaturation.h; sourceTree = "<group>"; };
+		5808B5D3192926CE00B94E07 /* RnViewControllerSaturation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RnViewControllerSaturation.m; sourceTree = "<group>"; };
+		5808B5D51929270E00B94E07 /* RnViewControllerColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RnViewControllerColor.h; sourceTree = "<group>"; };
+		5808B5D61929270E00B94E07 /* RnViewControllerColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RnViewControllerColor.m; sourceTree = "<group>"; };
+		5808B5D81929279700B94E07 /* RnViewControllerExport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RnViewControllerExport.h; sourceTree = "<group>"; };
+		5808B5D91929279700B94E07 /* RnViewControllerExport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RnViewControllerExport.m; sourceTree = "<group>"; };
+		5809F2421929F93F00F1296E /* RnViewControllerHome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RnViewControllerHome.h; sourceTree = "<group>"; };
+		5809F2431929F93F00F1296E /* RnViewControllerHome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RnViewControllerHome.m; sourceTree = "<group>"; };
+		5809F24A1929FAB100F1296E /* RnViewHomeLauncher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RnViewHomeLauncher.h; sourceTree = "<group>"; };
+		5809F24B1929FAB100F1296E /* RnViewHomeLauncher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RnViewHomeLauncher.m; sourceTree = "<group>"; };
 		5819F8EC192799EC002282A0 /* UIDevice+extend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+extend.h"; sourceTree = "<group>"; };
 		5819F8ED192799EC002282A0 /* UIDevice+extend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+extend.m"; sourceTree = "<group>"; };
 		5819F8EE192799EC002282A0 /* UIScreen+extend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScreen+extend.h"; sourceTree = "<group>"; };
@@ -91,6 +118,12 @@
 		58F0527819273C6C006BE37F /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		58F0527C19273E92006BE37F /* RnFilterDryBrush.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RnFilterDryBrush.h; sourceTree = "<group>"; };
 		58F0527D19273E92006BE37F /* RnFilterDryBrush.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RnFilterDryBrush.m; sourceTree = "<group>"; };
+		58F444F9192A323800D2C512 /* RnViewHomeGallery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RnViewHomeGallery.h; sourceTree = "<group>"; };
+		58F444FA192A323800D2C512 /* RnViewHomeGallery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RnViewHomeGallery.m; sourceTree = "<group>"; };
+		58F444FF192A362800D2C512 /* RnCurrentSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RnCurrentSettings.h; sourceTree = "<group>"; };
+		58F44500192A362800D2C512 /* RnCurrentSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RnCurrentSettings.m; sourceTree = "<group>"; };
+		58F44502192A3BB900D2C512 /* RnViewHomeGalleryItemButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RnViewHomeGalleryItemButton.h; sourceTree = "<group>"; };
+		58F44503192A3BB900D2C512 /* RnViewHomeGalleryItemButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RnViewHomeGalleryItemButton.m; sourceTree = "<group>"; };
 		58F828931924B3E20044C092 /* Renoir.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Renoir.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		58F828961924B3E20044C092 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		58F828981924B3E20044C092 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -146,6 +179,48 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5808B5C8192925D000B94E07 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				5808B5C9192925FF00B94E07 /* RnViewControllerRoot.h */,
+				5808B5CA192925FF00B94E07 /* RnViewControllerRoot.m */,
+				5809F2421929F93F00F1296E /* RnViewControllerHome.h */,
+				5809F2431929F93F00F1296E /* RnViewControllerHome.m */,
+				5808B5CC1929261D00B94E07 /* RnViewControllerConfirmation.h */,
+				5808B5CD1929261D00B94E07 /* RnViewControllerConfirmation.m */,
+				5808B5CF192926B900B94E07 /* RnViewControllerFrame.h */,
+				5808B5D0192926B900B94E07 /* RnViewControllerFrame.m */,
+				5808B5D2192926CE00B94E07 /* RnViewControllerSaturation.h */,
+				5808B5D3192926CE00B94E07 /* RnViewControllerSaturation.m */,
+				5808B5D51929270E00B94E07 /* RnViewControllerColor.h */,
+				5808B5D61929270E00B94E07 /* RnViewControllerColor.m */,
+				5808B5D81929279700B94E07 /* RnViewControllerExport.h */,
+				5808B5D91929279700B94E07 /* RnViewControllerExport.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		5809F2481929FA8D00F1296E /* UIComponents */ = {
+			isa = PBXGroup;
+			children = (
+				5809F2491929FA9600F1296E /* Home */,
+			);
+			name = UIComponents;
+			sourceTree = "<group>";
+		};
+		5809F2491929FA9600F1296E /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				5809F24A1929FAB100F1296E /* RnViewHomeLauncher.h */,
+				5809F24B1929FAB100F1296E /* RnViewHomeLauncher.m */,
+				58F444F9192A323800D2C512 /* RnViewHomeGallery.h */,
+				58F444FA192A323800D2C512 /* RnViewHomeGallery.m */,
+				58F44502192A3BB900D2C512 /* RnViewHomeGalleryItemButton.h */,
+				58F44503192A3BB900D2C512 /* RnViewHomeGalleryItemButton.m */,
+			);
+			name = Home;
+			sourceTree = "<group>";
+		};
 		5819F8E8192799D7002282A0 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
@@ -172,6 +247,8 @@
 			children = (
 				5819F9021927A807002282A0 /* RnCurrentImage.h */,
 				5819F9031927A807002282A0 /* RnCurrentImage.m */,
+				58F444FF192A362800D2C512 /* RnCurrentSettings.h */,
+				58F44500192A362800D2C512 /* RnCurrentSettings.m */,
 			);
 			name = Shared;
 			sourceTree = "<group>";
@@ -245,6 +322,8 @@
 				58F828AF1924B3E20044C092 /* ViewController.m */,
 				58F828CE1924B41A0044C092 /* UnkoViewController.h */,
 				58F828CF1924B41A0044C092 /* UnkoViewController.m */,
+				5809F2481929FA8D00F1296E /* UIComponents */,
+				5808B5C8192925D000B94E07 /* ViewControllers */,
 				58F828B11924B3E20044C092 /* Images.xcassets */,
 				58F8289D1924B3E20044C092 /* Supporting Files */,
 			);
@@ -327,6 +406,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = SSC;
 				TargetAttributes = {
+					58F828921924B3E20044C092 = {
+						DevelopmentTeam = 7FY9ETDU35;
+					};
 					58F828B61924B3E20044C092 = {
 						TestTargetID = 58F828921924B3E20044C092;
 					};
@@ -401,19 +483,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5808B5D4192926CE00B94E07 /* RnViewControllerSaturation.m in Sources */,
 				58F0527E19273E92006BE37F /* RnFilterDryBrush.m in Sources */,
+				58F444FB192A323800D2C512 /* RnViewHomeGallery.m in Sources */,
+				58F44501192A362800D2C512 /* RnCurrentSettings.m in Sources */,
 				5819F8FE192799EC002282A0 /* UIImage+extend.m in Sources */,
+				5809F24C1929FAB100F1296E /* RnViewHomeLauncher.m in Sources */,
 				5819F9041927A807002282A0 /* RnCurrentImage.m in Sources */,
 				5819F8FB192799EC002282A0 /* UIScreen+extend.m in Sources */,
 				5819F8FA192799EC002282A0 /* UIDevice+extend.m in Sources */,
+				5808B5CE1929261D00B94E07 /* RnViewControllerConfirmation.m in Sources */,
 				5819F8FD192799EC002282A0 /* UIScrollView+extend.m in Sources */,
+				5808B5D71929270E00B94E07 /* RnViewControllerColor.m in Sources */,
 				5819F8FF192799EC002282A0 /* UIViewController+extend.m in Sources */,
 				58F828B01924B3E20044C092 /* ViewController.m in Sources */,
 				58F828A71924B3E20044C092 /* AppDelegate.m in Sources */,
+				58F44504192A3BB900D2C512 /* RnViewHomeGalleryItemButton.m in Sources */,
 				58F828A31924B3E20044C092 /* main.m in Sources */,
 				5819F8FC192799EC002282A0 /* UIView+extend.m in Sources */,
+				5808B5D1192926B900B94E07 /* RnViewControllerFrame.m in Sources */,
 				5819F900192799EC002282A0 /* UIImagePickerController+extend.m in Sources */,
+				5808B5CB192925FF00B94E07 /* RnViewControllerRoot.m in Sources */,
+				5809F2441929F93F00F1296E /* RnViewControllerHome.m in Sources */,
 				58F828D01924B41B0044C092 /* UnkoViewController.m in Sources */,
+				5808B5DA1929279700B94E07 /* RnViewControllerExport.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -548,12 +641,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Toshiki Nakanishi (WRHUFP3254)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Toshiki Nakanishi (WRHUFP3254)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Renoir/Renoir-Prefix.pch";
 				INFOPLIST_FILE = "Renoir/Renoir-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "E9B9A372-2C94-4470-A67D-9EEA3F9CEC8D";
 				USER_HEADER_SEARCH_PATHS = "GPUImage/framework/**";
 				WRAPPER_EXTENSION = app;
 			};
@@ -564,12 +660,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Toshiki Nakanishi (7FY9ETDU35)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Toshiki Nakanishi (7FY9ETDU35)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Renoir/Renoir-Prefix.pch";
 				INFOPLIST_FILE = "Renoir/Renoir-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "BEC7D9CD-04AD-46ED-938F-28EBB47B2553";
 				USER_HEADER_SEARCH_PATHS = "GPUImage/framework/**";
 				WRAPPER_EXTENSION = app;
 			};

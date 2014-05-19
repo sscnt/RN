@@ -49,3 +49,4 @@
 #import "UIImage+extend.h"
 
 #import "RnCurrentImage.h"
+#import "RnCurrentSettings.h"

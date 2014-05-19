@@ -87,7 +87,7 @@
             if (_self.currentIndex == 6) {
                 UIImage* image = [RnCurrentImage mergeOriginalImageAndDeleteCache:YES];
                 
-                UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil);
+                //UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil);
                 
                 imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0.0f, 100.0f, 320.0f, image.size.height * 320.0f / image.size.width)];
                 imgView.image = image;
