@@ -20,15 +20,12 @@
     AppDelegate *appdelegate = [[UIApplication sharedApplication] delegate];
     [appdelegate setController:self];    
     
-    self.view.backgroundColor = [UIColor colorWithRed:243.0f/255.0f green:241.0f/255.0f blue:226.0f/255.0f alpha:1.0f];
+    self.view.backgroundColor = [RnCurrentSettings viewControllerBgColor];
     
     float height = [RnCurrentSettings homeLauncherHeight];
     _launcherView = [[RnViewHomeLauncher alloc] initWithFrame:CGRectMake(0.0f, [UIScreen height] - height, [UIScreen width], height)];
     [self.view addSubview:_launcherView];
-}
-
-- (void)viewWillAppear:(BOOL)animated
-{
+    
     [self initGallery];
 }
 
@@ -66,6 +63,7 @@
             numberToDisplay = rest * 4;
         }
         [_g setMaxNumberOfItems:numberToDisplay];
+        [group setAssetsFilter:[ALAssetsFilter allPhotos]];
         
         for (int i = numberOfAssets - numberToDisplay; i < numberOfAssets; i++) {
             [group enumerateAssetsAtIndexes:[NSIndexSet indexSetWithIndex:i] options:0 usingBlock:^(ALAsset* asset, NSUInteger index, BOOL* stop) {
@@ -79,6 +77,13 @@
     } failureBlock:^(NSError* error){
         
     }];
+}
+
+- (void)galleryDidSelectAsset:(ALAsset *)asset
+{
+    RnViewControllerConfirmation* controller = [[RnViewControllerConfirmation alloc] init];
+    controller.asset = asset;
+    [self.navigationController pushViewController:controller animated:YES];
 }
 
 - (void)didReceiveMemoryWarning

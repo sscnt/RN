@@ -23,6 +23,7 @@
 		5819F8FF192799EC002282A0 /* UIViewController+extend.m in Sources */ = {isa = PBXBuildFile; fileRef = 5819F8F7192799EC002282A0 /* UIViewController+extend.m */; };
 		5819F900192799EC002282A0 /* UIImagePickerController+extend.m in Sources */ = {isa = PBXBuildFile; fileRef = 5819F8F9192799EC002282A0 /* UIImagePickerController+extend.m */; };
 		5819F9041927A807002282A0 /* RnCurrentImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 5819F9031927A807002282A0 /* RnCurrentImage.m */; };
+		5898FDDE192A5F8A00901333 /* RnViewNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 5898FDDD192A5F8A00901333 /* RnViewNavigationBar.m */; };
 		58F0526F19273C42006BE37F /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58F0526E19273C42006BE37F /* CoreMedia.framework */; };
 		58F0527119273C4A006BE37F /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58F0527019273C4A006BE37F /* CoreVideo.framework */; };
 		58F0527319273C54006BE37F /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58F0527219273C54006BE37F /* OpenGLES.framework */; };
@@ -109,6 +110,8 @@
 		5819F8F9192799EC002282A0 /* UIImagePickerController+extend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImagePickerController+extend.m"; sourceTree = "<group>"; };
 		5819F9021927A807002282A0 /* RnCurrentImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RnCurrentImage.h; sourceTree = "<group>"; };
 		5819F9031927A807002282A0 /* RnCurrentImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RnCurrentImage.m; sourceTree = "<group>"; };
+		5898FDDC192A5F8A00901333 /* RnViewNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RnViewNavigationBar.h; sourceTree = "<group>"; };
+		5898FDDD192A5F8A00901333 /* RnViewNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RnViewNavigationBar.m; sourceTree = "<group>"; };
 		58F0526319273B2A006BE37F /* GPUImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GPUImage.xcodeproj; path = GPUImage/framework/GPUImage.xcodeproj; sourceTree = "<group>"; };
 		58F0526E19273C42006BE37F /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		58F0527019273C4A006BE37F /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
@@ -203,6 +206,8 @@
 		5809F2481929FA8D00F1296E /* UIComponents */ = {
 			isa = PBXGroup;
 			children = (
+				5898FDDC192A5F8A00901333 /* RnViewNavigationBar.h */,
+				5898FDDD192A5F8A00901333 /* RnViewNavigationBar.m */,
 				5809F2491929FA9600F1296E /* Home */,
 			);
 			name = UIComponents;
@@ -506,6 +511,7 @@
 				5808B5CB192925FF00B94E07 /* RnViewControllerRoot.m in Sources */,
 				5809F2441929F93F00F1296E /* RnViewControllerHome.m in Sources */,
 				58F828D01924B41B0044C092 /* UnkoViewController.m in Sources */,
+				5898FDDE192A5F8A00901333 /* RnViewNavigationBar.m in Sources */,
 				5808B5DA1929279700B94E07 /* RnViewControllerExport.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

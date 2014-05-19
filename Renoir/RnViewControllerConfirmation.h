@@ -7,7 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <AssetsLibrary/AssetsLibrary.h>
 
 @interface RnViewControllerConfirmation : UIViewController
+
+@property (nonatomic, strong) ALAsset* asset;
 
 @end

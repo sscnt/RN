@@ -10,7 +10,10 @@
 
 @interface RnCurrentSettings : NSObject
 + (RnCurrentSettings*)instance;
++ (UIColor*)viewControllerBgColor;
++ (UIColor*)navigationBarBgColor;
 
++ (UIColor*)homeLauncherBgColor;
 + (float)homeLauncherHeight;
 + (int)homeMaxNumberOfGalleryItem;
 + (CGSize)homeGalleryItemSize;

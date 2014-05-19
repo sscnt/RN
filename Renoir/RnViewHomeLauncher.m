@@ -15,7 +15,7 @@
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
-        self.backgroundColor = [UIColor colorWithRed:75.0f/255.0f green:164.0f/255.0f blue:144.0f/255.0f alpha:1.0f];
+        self.backgroundColor = [RnCurrentSettings homeLauncherBgColor];
     }
     return self;
 }

@@ -44,6 +44,7 @@
     
     RnViewHomeGalleryItemButton* button = [[RnViewHomeGalleryItemButton alloc] initWithFrame:CGRectMake(_insertX, _insertY, width, height)];
     button.asset = asset;
+    [button addTarget:self action:@selector(didButtonTouchUpInside:) forControlEvents:UIControlEventTouchUpInside];
     [_scrollView addSubview:button];
     
     _currentColumn++;
@@ -54,6 +55,11 @@
 {
     CGPoint bottomOffset = CGPointMake(0, self.scrollView.contentSize.height - self.scrollView.bounds.size.height);
     [self.scrollView setContentOffset:bottomOffset animated:NO];
+}
+
+- (void)didButtonTouchUpInside:(RnViewHomeGalleryItemButton *)button
+{
+    [self.delegate galleryDidSelectAsset:button.asset];
 }
 
 /*

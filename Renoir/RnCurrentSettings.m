@@ -44,7 +44,24 @@ static RnCurrentSettings* sharedRnCurrentSettings = nil;
     return self;
 }
 
+#pragma mark common
+
++ (UIColor *)viewControllerBgColor
+{
+    return [UIColor colorWithRed:243.0f/255.0f green:241.0f/255.0f blue:226.0f/255.0f alpha:1.0f];
+}
+
++ (UIColor *)navigationBarBgColor
+{
+    return [UIColor colorWithRed:75.0f/255.0f green:164.0f/255.0f blue:144.0f/255.0f alpha:1.0f];
+}
+
 #pragma mark home
+
++ (UIColor *)homeLauncherBgColor
+{
+    return [UIColor colorWithRed:75.0f/255.0f green:164.0f/255.0f blue:144.0f/255.0f alpha:1.0f];
+}
 
 + (float)homeLauncherHeight
 {

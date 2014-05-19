@@ -13,6 +13,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.view.backgroundColor = [RnCurrentSettings viewControllerBgColor];
 }
 
 - (void)didReceiveMemoryWarning

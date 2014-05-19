@@ -10,6 +10,7 @@
 #import "AppDelegate.h"
 #import "RnViewHomeLauncher.h"
 #import "RnViewHomeGallery.h"
+#import "RnViewControllerConfirmation.h"
 
 @interface RnViewControllerHome : UIViewController <RnViewHomeGalleryDelegate>
 
