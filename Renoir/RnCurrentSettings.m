@@ -53,7 +53,7 @@ static RnCurrentSettings* sharedRnCurrentSettings = nil;
 
 + (int)homeMaxNumberOfGalleryItem
 {
-    return 100;
+    return 200;
 }
 
 + (float)homeGalleryItemPadding

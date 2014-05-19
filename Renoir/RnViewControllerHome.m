@@ -54,10 +54,12 @@
         
         for (int i = numberOfAssets - numberToDisplay - 1; i < numberOfAssets; i++) {
             [group enumerateAssetsAtIndexes:[NSIndexSet indexSetWithIndex:i] options:0 usingBlock:^(ALAsset* asset, NSUInteger index, BOOL* stop) {
-                [_g addAsset:asset];
+                if ([[asset valueForProperty:ALAssetPropertyType] isEqualToString:ALAssetTypePhoto]) {
+                    [_g addAsset:asset];
+                }
             }];
         }
-        
+        [_g scrolltoBottom];
         
     } failureBlock:^(NSError* error){
         

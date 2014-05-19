@@ -14,6 +14,7 @@
 {
     float _insertY;
     float _insertX;
+    int _currentColumn;
 }
 
 @property (nonatomic, assign) int maxNumberOfItems;

@@ -18,21 +18,15 @@
         self.userInteractionEnabled = YES;
         _scrollView = [[UIScrollView alloc] initWithFrame:self.bounds];
         _scrollView.showsHorizontalScrollIndicator = NO;
+        _scrollView.showsVerticalScrollIndicator = NO;
         _scrollView.backgroundColor = [UIColor clearColor];
         [self addSubview:_scrollView];
         
-        _insertY = 0.0f;
-        _insertX = 0.0f;
+        _insertY = [RnCurrentSettings homeGalleryItemPadding];
+        _insertX = [RnCurrentSettings homeGalleryItemPadding];
+        _currentColumn = 1;
     }
     return self;
-}
-
-- (void)setMaxNumberOfItems:(int)maxNumberOfItems
-{
-    int column = [RnCurrentSettings homeNumberOfGalleryItemInOneColumn];
-    _maxNumberOfItems = maxNumberOfItems;
-    float height = (float)(maxNumberOfItems / column) * [RnCurrentSettings homeGalleryItemSize].height + [RnCurrentSettings homeGalleryItemPadding] * (float)(maxNumberOfItems / column + 1);
-    _scrollView.contentSize = CGSizeMake(self.frame.size.width, height);
 }
 
 - (void)addAsset:(ALAsset *)asset
@@ -41,17 +35,26 @@
     float width = [RnCurrentSettings homeGalleryItemSize].width;
     float height = [RnCurrentSettings homeGalleryItemSize].height;
     
+    
     RnViewHomeGalleryItemButton* button = [[RnViewHomeGalleryItemButton alloc] initWithFrame:CGRectMake(_insertX, _insertY, width, height)];
     button.asset = asset;
     [_scrollView addSubview:button];
     
+    _currentColumn++;
     _insertX += padding + width;
-    if (_insertX > _scrollView.contentSize.width) {
-        _insertX = 0.0f;
+    
+    if (_currentColumn > [RnCurrentSettings homeNumberOfGalleryItemInOneColumn]) {
+        _insertX = padding;
         _insertY += padding + height;
+        _scrollView.contentSize = CGSizeMake([self width], _insertY + height + padding);
+        _currentColumn = 1;
     }
 }
-
+- (void)scrolltoBottom
+{
+    CGPoint bottomOffset = CGPointMake(0, self.scrollView.contentSize.height - self.scrollView.bounds.size.height);
+    [self.scrollView setContentOffset:bottomOffset animated:NO];
+}
 
 /*
 // Only override drawRect: if you perform custom drawing.
