@@ -8,8 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+@class RnViewControllerHome;
+
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+@property (nonatomic, weak) RnViewControllerHome* controller;
 
 @end

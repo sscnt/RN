@@ -17,23 +17,38 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    AppDelegate *appdelegate = [[UIApplication sharedApplication] delegate];
+    [appdelegate setController:self];    
+    
     self.view.backgroundColor = [UIColor colorWithRed:243.0f/255.0f green:241.0f/255.0f blue:226.0f/255.0f alpha:1.0f];
     
     float height = [RnCurrentSettings homeLauncherHeight];
     _launcherView = [[RnViewHomeLauncher alloc] initWithFrame:CGRectMake(0.0f, [UIScreen height] - height, [UIScreen width], height)];
     [self.view addSubview:_launcherView];
-    
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
     [self initGallery];
+}
+
+- (void)removeGallery
+{
+    [_galleryView removeFromSuperview];
+    _galleryView.delegate = nil;
+    _galleryView = nil;
 }
 
 - (void)initGallery
 {
+    LOG(@"init gallery");
     if (_galleryView) {
-        _galleryView = nil;
+        [self removeGallery];
     }
     
     float height = [UIScreen height] - [RnCurrentSettings homeLauncherHeight];
     _galleryView = [[RnViewHomeGallery alloc] initWithFrame:CGRectMake(0.0f, 0.0f, [UIScreen width], height)];
+    _galleryView.delegate = self;
     [self.view addSubview:_galleryView];
     
     
@@ -52,7 +67,7 @@
         }
         [_g setMaxNumberOfItems:numberToDisplay];
         
-        for (int i = numberOfAssets - numberToDisplay - 1; i < numberOfAssets; i++) {
+        for (int i = numberOfAssets - numberToDisplay; i < numberOfAssets; i++) {
             [group enumerateAssetsAtIndexes:[NSIndexSet indexSetWithIndex:i] options:0 usingBlock:^(ALAsset* asset, NSUInteger index, BOOL* stop) {
                 if ([[asset valueForProperty:ALAssetPropertyType] isEqualToString:ALAssetTypePhoto]) {
                     [_g addAsset:asset];

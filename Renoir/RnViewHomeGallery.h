@@ -10,6 +10,10 @@
 #import <AssetsLibrary/AssetsLibrary.h>
 #import "RnViewHomeGalleryItemButton.h"
 
+@protocol RnViewHomeGalleryDelegate <NSObject>
+- (void)galleryDidSelectAsset:(ALAsset*)asset;
+@end
+
 @interface RnViewHomeGallery : UIView
 {
     float _insertY;
@@ -19,6 +23,7 @@
 
 @property (nonatomic, assign) int maxNumberOfItems;
 @property (nonatomic, strong) UIScrollView* scrollView;
+@property (nonatomic, weak) id<RnViewHomeGalleryDelegate> delegate;
 
 - (void)addAsset:(ALAsset*)asset;
 - (void)didButtonTouchUpInside:(RnViewHomeGalleryItemButton*)button;

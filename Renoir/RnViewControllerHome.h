@@ -7,14 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AppDelegate.h"
 #import "RnViewHomeLauncher.h"
 #import "RnViewHomeGallery.h"
 
-@interface RnViewControllerHome : UIViewController
+@interface RnViewControllerHome : UIViewController <RnViewHomeGalleryDelegate>
 
 @property (nonatomic, strong) RnViewHomeLauncher* launcherView;
 @property (nonatomic, strong) RnViewHomeGallery* galleryView;
 
 - (void)initGallery;
+- (void)removeGallery;
 
 @end

@@ -35,6 +35,12 @@
     float width = [RnCurrentSettings homeGalleryItemSize].width;
     float height = [RnCurrentSettings homeGalleryItemSize].height;
     
+    if (_currentColumn > [RnCurrentSettings homeNumberOfGalleryItemInOneColumn]) {
+        _insertX = padding;
+        _insertY += padding + height;
+        _scrollView.contentSize = CGSizeMake([self width], _insertY + height + padding);
+        _currentColumn = 1;
+    }
     
     RnViewHomeGalleryItemButton* button = [[RnViewHomeGalleryItemButton alloc] initWithFrame:CGRectMake(_insertX, _insertY, width, height)];
     button.asset = asset;
@@ -43,12 +49,6 @@
     _currentColumn++;
     _insertX += padding + width;
     
-    if (_currentColumn > [RnCurrentSettings homeNumberOfGalleryItemInOneColumn]) {
-        _insertX = padding;
-        _insertY += padding + height;
-        _scrollView.contentSize = CGSizeMake([self width], _insertY + height + padding);
-        _currentColumn = 1;
-    }
 }
 - (void)scrolltoBottom
 {
