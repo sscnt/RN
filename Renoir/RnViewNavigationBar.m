@@ -12,13 +12,22 @@
 
 - (id)init
 {
-    CGRect frame = CGRectMake(0.0f, 0.0f, [UIScreen width], 50.0f);
+    CGRect frame = CGRectMake(0.0f, 0.0f, [UIScreen width], [RnCurrentSettings navigationBarHeight]);
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
         self.backgroundColor = [RnCurrentSettings navigationBarBgColor];
+        
+        _titleLabel = [[RnViewLabel alloc] initWithFrame:CGRectMake(0.0f, 0.0f, frame.size.width, frame.size.height)];
+        _titleLabel.fontSize = 20.0f;
+        [self addSubview:_titleLabel];
     }
     return self;
+}
+
+- (void)setTitle:(NSString *)title
+{
+    _titleLabel.text = title;
 }
 
 @end

@@ -24,6 +24,12 @@
 		5819F900192799EC002282A0 /* UIImagePickerController+extend.m in Sources */ = {isa = PBXBuildFile; fileRef = 5819F8F9192799EC002282A0 /* UIImagePickerController+extend.m */; };
 		5819F9041927A807002282A0 /* RnCurrentImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 5819F9031927A807002282A0 /* RnCurrentImage.m */; };
 		5898FDDE192A5F8A00901333 /* RnViewNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 5898FDDD192A5F8A00901333 /* RnViewNavigationBar.m */; };
+		5898FDE4192A67D200901333 /* Aller_Bd.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5898FDE1192A67D200901333 /* Aller_Bd.ttf */; };
+		5898FDE5192A67D200901333 /* ClearSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5898FDE2192A67D200901333 /* ClearSans-Bold.ttf */; };
+		5898FDE6192A67D200901333 /* mplus-1c-bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5898FDE3192A67D200901333 /* mplus-1c-bold.ttf */; };
+		5898FDE9192A683700901333 /* RnViewLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5898FDE8192A683700901333 /* RnViewLabel.m */; };
+		5898FDF1192A6E9700901333 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5898FDF3192A6E9700901333 /* Localizable.strings */; };
+		5898FDF8192A711400901333 /* RnViewNavigationBarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 5898FDF7192A711400901333 /* RnViewNavigationBarButton.m */; };
 		58F0526F19273C42006BE37F /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58F0526E19273C42006BE37F /* CoreMedia.framework */; };
 		58F0527119273C4A006BE37F /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58F0527019273C4A006BE37F /* CoreVideo.framework */; };
 		58F0527319273C54006BE37F /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58F0527219273C54006BE37F /* OpenGLES.framework */; };
@@ -112,6 +118,19 @@
 		5819F9031927A807002282A0 /* RnCurrentImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RnCurrentImage.m; sourceTree = "<group>"; };
 		5898FDDC192A5F8A00901333 /* RnViewNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RnViewNavigationBar.h; sourceTree = "<group>"; };
 		5898FDDD192A5F8A00901333 /* RnViewNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RnViewNavigationBar.m; sourceTree = "<group>"; };
+		5898FDE1192A67D200901333 /* Aller_Bd.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Aller_Bd.ttf; sourceTree = "<group>"; };
+		5898FDE2192A67D200901333 /* ClearSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ClearSans-Bold.ttf"; sourceTree = "<group>"; };
+		5898FDE3192A67D200901333 /* mplus-1c-bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "mplus-1c-bold.ttf"; sourceTree = "<group>"; };
+		5898FDE7192A683700901333 /* RnViewLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RnViewLabel.h; sourceTree = "<group>"; };
+		5898FDE8192A683700901333 /* RnViewLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RnViewLabel.m; sourceTree = "<group>"; };
+		5898FDEA192A6E5B00901333 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main_iPhone.strings; sourceTree = "<group>"; };
+		5898FDEB192A6E5B00901333 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main_iPad.strings; sourceTree = "<group>"; };
+		5898FDEC192A6E5B00901333 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		5898FDED192A6E5B00901333 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		5898FDF2192A6E9700901333 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		5898FDF4192A6E9E00901333 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
+		5898FDF6192A711400901333 /* RnViewNavigationBarButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RnViewNavigationBarButton.h; sourceTree = "<group>"; };
+		5898FDF7192A711400901333 /* RnViewNavigationBarButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RnViewNavigationBarButton.m; sourceTree = "<group>"; };
 		58F0526319273B2A006BE37F /* GPUImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GPUImage.xcodeproj; path = GPUImage/framework/GPUImage.xcodeproj; sourceTree = "<group>"; };
 		58F0526E19273C42006BE37F /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		58F0527019273C4A006BE37F /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
@@ -208,6 +227,9 @@
 			children = (
 				5898FDDC192A5F8A00901333 /* RnViewNavigationBar.h */,
 				5898FDDD192A5F8A00901333 /* RnViewNavigationBar.m */,
+				5898FDF5192A70FA00901333 /* NavigationBarButton */,
+				5898FDE7192A683700901333 /* RnViewLabel.h */,
+				5898FDE8192A683700901333 /* RnViewLabel.m */,
 				5809F2491929FA9600F1296E /* Home */,
 			);
 			name = UIComponents;
@@ -256,6 +278,25 @@
 				58F44500192A362800D2C512 /* RnCurrentSettings.m */,
 			);
 			name = Shared;
+			sourceTree = "<group>";
+		};
+		5898FDE0192A67C500901333 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				5898FDE1192A67D200901333 /* Aller_Bd.ttf */,
+				5898FDE2192A67D200901333 /* ClearSans-Bold.ttf */,
+				5898FDE3192A67D200901333 /* mplus-1c-bold.ttf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
+		5898FDF5192A70FA00901333 /* NavigationBarButton */ = {
+			isa = PBXGroup;
+			children = (
+				5898FDF6192A711400901333 /* RnViewNavigationBarButton.h */,
+				5898FDF7192A711400901333 /* RnViewNavigationBarButton.m */,
+			);
+			name = NavigationBarButton;
 			sourceTree = "<group>";
 		};
 		58F0526419273B2A006BE37F /* Products */ = {
@@ -330,6 +371,7 @@
 				5809F2481929FA8D00F1296E /* UIComponents */,
 				5808B5C8192925D000B94E07 /* ViewControllers */,
 				58F828B11924B3E20044C092 /* Images.xcassets */,
+				5898FDE0192A67C500901333 /* Fonts */,
 				58F8289D1924B3E20044C092 /* Supporting Files */,
 			);
 			path = Renoir;
@@ -342,6 +384,7 @@
 				58F8289F1924B3E20044C092 /* InfoPlist.strings */,
 				58F828A21924B3E20044C092 /* main.m */,
 				58F828A41924B3E20044C092 /* Renoir-Prefix.pch */,
+				5898FDF3192A6E9700901333 /* Localizable.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -426,6 +469,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ja,
 			);
 			mainGroup = 58F8288A1924B3E20044C092;
 			productRefGroup = 58F828941924B3E20044C092 /* Products */;
@@ -466,8 +510,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5898FDE5192A67D200901333 /* ClearSans-Bold.ttf in Resources */,
 				58F828AD1924B3E20044C092 /* Main_iPad.storyboard in Resources */,
+				5898FDE6192A67D200901333 /* mplus-1c-bold.ttf in Resources */,
 				58F828B21924B3E20044C092 /* Images.xcassets in Resources */,
+				5898FDE4192A67D200901333 /* Aller_Bd.ttf in Resources */,
+				5898FDF1192A6E9700901333 /* Localizable.strings in Resources */,
 				58F828AA1924B3E20044C092 /* Main_iPhone.storyboard in Resources */,
 				58F828A11924B3E20044C092 /* InfoPlist.strings in Resources */,
 			);
@@ -489,6 +537,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				5808B5D4192926CE00B94E07 /* RnViewControllerSaturation.m in Sources */,
+				5898FDF8192A711400901333 /* RnViewNavigationBarButton.m in Sources */,
+				5898FDE9192A683700901333 /* RnViewLabel.m in Sources */,
 				58F0527E19273E92006BE37F /* RnFilterDryBrush.m in Sources */,
 				58F444FB192A323800D2C512 /* RnViewHomeGallery.m in Sources */,
 				58F44501192A362800D2C512 /* RnCurrentSettings.m in Sources */,
@@ -535,10 +585,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		5898FDF3192A6E9700901333 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5898FDF2192A6E9700901333 /* en */,
+				5898FDF4192A6E9E00901333 /* ja */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		58F8289F1924B3E20044C092 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
 				58F828A01924B3E20044C092 /* en */,
+				5898FDEC192A6E5B00901333 /* ja */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -547,6 +607,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				58F828A91924B3E20044C092 /* Base */,
+				5898FDEA192A6E5B00901333 /* ja */,
 			);
 			name = Main_iPhone.storyboard;
 			sourceTree = "<group>";
@@ -555,6 +616,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				58F828AC1924B3E20044C092 /* Base */,
+				5898FDEB192A6E5B00901333 /* ja */,
 			);
 			name = Main_iPad.storyboard;
 			sourceTree = "<group>";
@@ -563,6 +625,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				58F828C21924B3E20044C092 /* en */,
+				5898FDED192A6E5B00901333 /* ja */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";

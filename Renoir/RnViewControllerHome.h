@@ -16,6 +16,7 @@
 
 @property (nonatomic, strong) RnViewHomeLauncher* launcherView;
 @property (nonatomic, strong) RnViewHomeGallery* galleryView;
+@property (nonatomic, strong) ALAssetsLibrary* library;
 
 - (void)initGallery;
 - (void)removeGallery;

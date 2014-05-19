@@ -12,6 +12,7 @@
 + (RnCurrentSettings*)instance;
 + (UIColor*)viewControllerBgColor;
 + (UIColor*)navigationBarBgColor;
++ (float)navigationBarHeight;
 
 + (UIColor*)homeLauncherBgColor;
 + (float)homeLauncherHeight;

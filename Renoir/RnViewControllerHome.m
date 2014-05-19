@@ -51,8 +51,12 @@
     
     __block RnViewHomeGallery* _g = _galleryView;
     
-    ALAssetsLibrary* al = [[ALAssetsLibrary alloc] init];
-    [al enumerateGroupsWithTypes:ALAssetsGroupSavedPhotos usingBlock:^(ALAssetsGroup* group, BOOL* stop){
+    static dispatch_once_t pred = 0;
+    dispatch_once(&pred, ^{
+        self.library = [[ALAssetsLibrary alloc] init];
+    });
+    
+    [self.library enumerateGroupsWithTypes:ALAssetsGroupSavedPhotos usingBlock:^(ALAssetsGroup* group, BOOL* stop){
         
         int numberOfAssets = (int)[group numberOfAssets];
         int numberToDisplay = numberOfAssets;
@@ -80,7 +84,7 @@
 }
 
 - (void)galleryDidSelectAsset:(ALAsset *)asset
-{
+{    
     RnViewControllerConfirmation* controller = [[RnViewControllerConfirmation alloc] init];
     controller.asset = asset;
     [self.navigationController pushViewController:controller animated:YES];

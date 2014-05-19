@@ -56,6 +56,11 @@ static RnCurrentSettings* sharedRnCurrentSettings = nil;
     return [UIColor colorWithRed:75.0f/255.0f green:164.0f/255.0f blue:144.0f/255.0f alpha:1.0f];
 }
 
++ (float)navigationBarHeight
+{
+    return 50.0f;
+}
+
 #pragma mark home
 
 + (UIColor *)homeLauncherBgColor

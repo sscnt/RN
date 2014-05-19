@@ -7,7 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RnViewLabel.h"
+#import "RnViewHomeGalleryItemButton.h"
 
 @interface RnViewNavigationBar : UIView
+{
+    RnViewLabel* _titleLabel;
+}
+
+@property (nonatomic, strong) NSString* title;
+
+- (void)showBackButton;
+- (void)showNextButton;
 
 @end

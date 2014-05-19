@@ -8,9 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import <AssetsLibrary/AssetsLibrary.h>
+#import "RnViewNavigationBar.h"
 
 @interface RnViewControllerConfirmation : UIViewController
 
 @property (nonatomic, strong) ALAsset* asset;
+@property (nonatomic, strong) RnViewNavigationBar* navigationBar;
 
 @end
