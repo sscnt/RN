@@ -13,6 +13,9 @@
 #import "RnViewControllerConfirmation.h"
 
 @interface RnViewControllerHome : UIViewController <RnViewHomeGalleryDelegate>
+{
+    BOOL isBackground;
+}
 
 @property (nonatomic, strong) RnViewHomeLauncher* launcherView;
 @property (nonatomic, strong) RnViewHomeGallery* galleryView;

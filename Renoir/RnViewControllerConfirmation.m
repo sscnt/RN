@@ -16,6 +16,9 @@
     self.view.backgroundColor = [RnCurrentSettings viewControllerBgColor];
     _navigationBar = [[RnViewNavigationBar alloc] init];
     _navigationBar.title = NSLocalizedString(@"PREVIEW", nil);
+    _navigationBar.delegate = self;
+    [_navigationBar showBackButton];
+    [_navigationBar showNextButton];
     [self.view addSubview:_navigationBar];
     
     CGRect frame;
@@ -37,12 +40,23 @@
         }
     }
     frame = CGRectMake(0.0f, 0.0f, width, height);
-    UIImageView* imgView = [[UIImageView alloc] initWithFrame:frame];
-    imgView.center = self.view.center;
-    imgView.image = image;
-    [self.view addSubview:imgView];
+    _imgView = [[UIImageView alloc] initWithFrame:frame];
+    _imgView.center = self.view.center;
+    _imgView.image = image;
+    [self.view addSubview:_imgView];
 }
 
+- (void)navigationBarDidBackButtonTouchUpInside:(RnViewNavigationBarButton *)button
+{
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (void)navigationBarDidNextButtonTouchUpInside:(RnViewNavigationBarButton *)button
+{
+    RnViewControllerFrame* controller = [[RnViewControllerFrame alloc] init];
+    controller.imageToProcess = _imgView.image;
+    [self.navigationController pushViewController:controller animated:YES];
+}
 
 - (void)didReceiveMemoryWarning
 {

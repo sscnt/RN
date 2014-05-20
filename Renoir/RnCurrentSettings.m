@@ -48,12 +48,22 @@ static RnCurrentSettings* sharedRnCurrentSettings = nil;
 
 + (UIColor *)viewControllerBgColor
 {
-    return [UIColor colorWithRed:243.0f/255.0f green:241.0f/255.0f blue:226.0f/255.0f alpha:1.0f];
+    return [UIColor colorWithRed:40.0f/255.0f green:42.0f/255.0f blue:41.0f/255.0f alpha:1.0f];
 }
 
 + (UIColor *)navigationBarBgColor
 {
-    return [UIColor colorWithRed:75.0f/255.0f green:164.0f/255.0f blue:144.0f/255.0f alpha:1.0f];
+    return [UIColor colorWithRed:50.0f/255.0f green:52.0f/255.0f blue:51.0f/255.0f alpha:1.0f];
+}
+
++ (UIColor *)navigationBarButtonColor
+{
+    return [UIColor colorWithWhite:1.0f alpha:1.0f];
+}
+
++ (UIColor *)navigationBarButtonLightColor
+{
+    return [UIColor colorWithRed:104.0f/255.0f green:211.0f/255.0f blue:231.0f/255.0f alpha:1.0f];
 }
 
 + (float)navigationBarHeight
@@ -65,7 +75,7 @@ static RnCurrentSettings* sharedRnCurrentSettings = nil;
 
 + (UIColor *)homeLauncherBgColor
 {
-    return [UIColor colorWithRed:75.0f/255.0f green:164.0f/255.0f blue:144.0f/255.0f alpha:1.0f];
+    return [self navigationBarBgColor];
 }
 
 + (float)homeLauncherHeight

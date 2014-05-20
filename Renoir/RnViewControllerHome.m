@@ -17,6 +17,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    isBackground = NO;
     AppDelegate *appdelegate = [[UIApplication sharedApplication] delegate];
     [appdelegate setController:self];    
     
@@ -25,8 +26,19 @@
     float height = [RnCurrentSettings homeLauncherHeight];
     _launcherView = [[RnViewHomeLauncher alloc] initWithFrame:CGRectMake(0.0f, [UIScreen height] - height, [UIScreen width], height)];
     [self.view addSubview:_launcherView];
-    
-    [self initGallery];
+}
+
+- (void)viewDidDisappear:(BOOL)animated
+{
+    isBackground = YES;
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    isBackground = NO;
+    if (_galleryView == nil) {
+        [self initGallery];
+    }
 }
 
 - (void)removeGallery
@@ -38,6 +50,9 @@
 
 - (void)initGallery
 {
+    if (isBackground) {
+        return;
+    }
     LOG(@"init gallery");
     if (_galleryView) {
         [self removeGallery];

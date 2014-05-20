@@ -13,6 +13,22 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.view.backgroundColor = [RnCurrentSettings viewControllerBgColor];
+    _navigationBar = [[RnViewNavigationBar alloc] init];
+    _navigationBar.title = NSLocalizedString(@"FRAME", nil);
+    _navigationBar.delegate = self;
+    [self.view addSubview:_navigationBar];
+
+}
+
+- (void)navigationBarDidBackButtonTouchUpInside:(RnViewNavigationBarButton *)button
+{
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (void)navigationBarDidNextButtonTouchUpInside:(RnViewNavigationBarButton *)button
+{
+
 }
 
 - (void)didReceiveMemoryWarning

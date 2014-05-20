@@ -9,10 +9,12 @@
 #import <Foundation/Foundation.h>
 #import <AssetsLibrary/AssetsLibrary.h>
 #import "RnViewNavigationBar.h"
+#import "RnViewControllerFrame.h"
 
-@interface RnViewControllerConfirmation : UIViewController
+@interface RnViewControllerConfirmation : UIViewController <RnViewNavigationBarDelegate>
 
 @property (nonatomic, strong) ALAsset* asset;
 @property (nonatomic, strong) RnViewNavigationBar* navigationBar;
+@property (nonatomic, strong) UIImageView* imgView;
 
 @end

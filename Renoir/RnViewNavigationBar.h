@@ -8,7 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "RnViewLabel.h"
-#import "RnViewHomeGalleryItemButton.h"
+#import "RnViewNavigationBarButton.h"
+
+@protocol RnViewNavigationBarDelegate <NSObject>
+- (void)navigationBarDidBackButtonTouchUpInside:(RnViewNavigationBarButton*)button;
+- (void)navigationBarDidNextButtonTouchUpInside:(RnViewNavigationBarButton*)button;
+@end
 
 @interface RnViewNavigationBar : UIView
 {
@@ -16,8 +21,13 @@
 }
 
 @property (nonatomic, strong) NSString* title;
+@property (nonatomic, strong) RnViewNavigationBarButton* backButton;
+@property (nonatomic, strong) RnViewNavigationBarButton* nextButton;
+@property (nonatomic, weak) id<RnViewNavigationBarDelegate> delegate;
 
 - (void)showBackButton;
 - (void)showNextButton;
+
+- (void)didButtonTouchUpInside:(id)sender;
 
 @end

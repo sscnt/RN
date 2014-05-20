@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RnViewLabel.h"
 
 typedef NS_ENUM(NSInteger, RnViewNavigationBarButtonType){
     RnViewNavigationBarButtonTypeBack = 1,
@@ -14,6 +15,8 @@ typedef NS_ENUM(NSInteger, RnViewNavigationBarButtonType){
 };
 
 @interface RnViewNavigationBarButton : UIButton
+
+@property (nonatomic, assign) RnViewNavigationBarButtonType type;
 
 - (id)initWithType:(RnViewNavigationBarButtonType)type;
 
