@@ -15,6 +15,7 @@
 static RnCurrentImage* sharedRnCurrentImage = nil;
 
 NSString* const pathForOriginalImage = @"tmp/original_image";
+NSString* const pathForPreviewOriginalImage = @"tmp/preview_original_image";
 
 + (RnCurrentImage*)instance {
 	@synchronized(self) {
@@ -232,6 +233,16 @@ NSString* const pathForOriginalImage = @"tmp/original_image";
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     return image;
+}
+
++ (BOOL)savePreviewOriginalImage:(UIImage *)image
+{
+    return [self saveImage:image AtPath:pathForPreviewOriginalImage];
+}
+
++ (UIImage *)previewOriginalImage
+{
+    return [self imageAtPath:pathForPreviewOriginalImage];
 }
 
 + (void)clean

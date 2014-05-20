@@ -29,4 +29,7 @@
 + (UIImage*)mergeOriginalImageAndDeleteCache:(BOOL)del;
 + (UIImage*)exploadedOriginalImageAtIndex:(int)index;
 
++ (BOOL)savePreviewOriginalImage:(UIImage*)image;
++ (UIImage*)previewOriginalImage;
+
 @end

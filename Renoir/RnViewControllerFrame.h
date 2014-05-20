@@ -9,9 +9,12 @@
 #import <UIKit/UIKit.h>
 #import "RnViewNavigationBar.h"
 
-@interface RnViewControllerFrame : UIViewController <RnViewNavigationBarDelegate>
+@interface RnViewControllerFrame : UIViewController <RnViewNavigationBarDelegate, RnProcessorDelegate>
 
 @property (nonatomic, strong) RnViewNavigationBar* navigationBar;
 @property (nonatomic, weak) UIImage* imageToProcess;
+@property (nonatomic, strong) UIImageView* imgView;
+
+- (void)finishProcessing;
 
 @end

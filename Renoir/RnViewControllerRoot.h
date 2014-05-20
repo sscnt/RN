@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "RnViewControllerHome.h"
 
-@interface RnViewControllerRoot : UINavigationController
+@interface RnViewControllerRoot : UINavigationController <UINavigationControllerDelegate>
 
 @end

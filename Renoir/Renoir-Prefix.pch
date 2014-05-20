@@ -40,6 +40,53 @@
 
 #define s255(v) v/255.0
 
+
+typedef NS_ENUM(NSInteger, VnBlendingMode){
+    VnBlendingModeNormal = 1,
+    VnBlendingModeDarken,
+    VnBlendingModeScreen,
+    VnBlendingModeMultiply,
+    VnBlendingModeDarkerColor,
+    VnBlendingModeLighten,
+    VnBlendingModeSoftLight,
+    VnBlendingModeHardLight,
+    VnBlendingModeVividLight,
+    VnBlendingModeOverlay,
+    VnBlendingModeExclusion,
+    VnBlendingModeColorBurn,
+    VnBlendingModeColor,
+    VnBlendingModeColorDodge,
+    VnBlendingModeLinearDodge,
+    VnBlendingModeLinearLight,
+    VnBlendingModeHue,
+    VnBlendingModeSaturation,
+    VnBlendingModeLuminotisy,
+    VnBlendingModeDifference
+};
+
+#import "VnBlendingNormal.h"
+#import "VnBlendingDarken.h"
+#import "VnBlendingMultiply.h"
+#import "VnBlendingScreen.h"
+#import "VnBlendingSoftLight.h"
+#import "VnBlendingLighten.h"
+#import "VnBlendingHardLight.h"
+#import "VnBlendingVividLight.h"
+#import "VnBlendingOverlay.h"
+#import "VnBlendingColorDodge.h"
+#import "VnBlendingDifference.h"
+#import "VnBlendingLinearDodge.h"
+#import "VnBlendingColor.h"
+#import "VnBlendingDarkerColor.h"
+#import "VnBlendingExclusion.h"
+#import "VnBlendingHue.h"
+#import "VnBlendingColorBurn.h"
+#import "VnBlendingSaturation.h"
+#import "VnBlendingLuminosity.h"
+#import "VnBlendingLinearLight.h"
+
+
+
 #import "UIDevice+extend.h"
 #import "UIScreen+extend.h"
 #import "UIView+extend.h"
@@ -50,3 +97,4 @@
 
 #import "RnCurrentImage.h"
 #import "RnCurrentSettings.h"
+#import "RnProcessor.h"

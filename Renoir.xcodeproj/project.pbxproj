@@ -57,6 +57,27 @@
 		58F828C31924B3E20044C092 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 58F828C11924B3E20044C092 /* InfoPlist.strings */; };
 		58F828C51924B3E20044C092 /* RenoirTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F828C41924B3E20044C092 /* RenoirTests.m */; };
 		58F828D01924B41B0044C092 /* UnkoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F828CF1924B41A0044C092 /* UnkoViewController.m */; };
+		58FD777E192B4790009E3FEB /* RnProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = 58FD777D192B4790009E3FEB /* RnProcessor.m */; };
+		58FD77AB192B58BD009E3FEB /* VnBlendingNormal.m in Sources */ = {isa = PBXBuildFile; fileRef = 58FD7784192B58BD009E3FEB /* VnBlendingNormal.m */; };
+		58FD77AC192B58BD009E3FEB /* VnBlendingDarken.m in Sources */ = {isa = PBXBuildFile; fileRef = 58FD7786192B58BD009E3FEB /* VnBlendingDarken.m */; };
+		58FD77AD192B58BD009E3FEB /* VnBlendingMultiply.m in Sources */ = {isa = PBXBuildFile; fileRef = 58FD7788192B58BD009E3FEB /* VnBlendingMultiply.m */; };
+		58FD77AE192B58BD009E3FEB /* VnBlendingScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 58FD778A192B58BD009E3FEB /* VnBlendingScreen.m */; };
+		58FD77AF192B58BD009E3FEB /* VnBlendingSoftLight.m in Sources */ = {isa = PBXBuildFile; fileRef = 58FD778C192B58BD009E3FEB /* VnBlendingSoftLight.m */; };
+		58FD77B0192B58BD009E3FEB /* VnBlendingLighten.m in Sources */ = {isa = PBXBuildFile; fileRef = 58FD778E192B58BD009E3FEB /* VnBlendingLighten.m */; };
+		58FD77B1192B58BD009E3FEB /* VnBlendingHardLight.m in Sources */ = {isa = PBXBuildFile; fileRef = 58FD7790192B58BD009E3FEB /* VnBlendingHardLight.m */; };
+		58FD77B2192B58BD009E3FEB /* VnBlendingVividLight.m in Sources */ = {isa = PBXBuildFile; fileRef = 58FD7792192B58BD009E3FEB /* VnBlendingVividLight.m */; };
+		58FD77B3192B58BD009E3FEB /* VnBlendingOverlay.m in Sources */ = {isa = PBXBuildFile; fileRef = 58FD7794192B58BD009E3FEB /* VnBlendingOverlay.m */; };
+		58FD77B4192B58BD009E3FEB /* VnBlendingColorDodge.m in Sources */ = {isa = PBXBuildFile; fileRef = 58FD7796192B58BD009E3FEB /* VnBlendingColorDodge.m */; };
+		58FD77B5192B58BD009E3FEB /* VnBlendingDifference.m in Sources */ = {isa = PBXBuildFile; fileRef = 58FD7798192B58BD009E3FEB /* VnBlendingDifference.m */; };
+		58FD77B6192B58BD009E3FEB /* VnBlendingLinearDodge.m in Sources */ = {isa = PBXBuildFile; fileRef = 58FD779A192B58BD009E3FEB /* VnBlendingLinearDodge.m */; };
+		58FD77B7192B58BD009E3FEB /* VnBlendingLinearLight.m in Sources */ = {isa = PBXBuildFile; fileRef = 58FD779C192B58BD009E3FEB /* VnBlendingLinearLight.m */; };
+		58FD77B8192B58BD009E3FEB /* VnBlendingColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 58FD779E192B58BD009E3FEB /* VnBlendingColor.m */; };
+		58FD77B9192B58BD009E3FEB /* VnBlendingDarkerColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 58FD77A0192B58BD009E3FEB /* VnBlendingDarkerColor.m */; };
+		58FD77BA192B58BD009E3FEB /* VnBlendingExclusion.m in Sources */ = {isa = PBXBuildFile; fileRef = 58FD77A2192B58BD009E3FEB /* VnBlendingExclusion.m */; };
+		58FD77BB192B58BD009E3FEB /* VnBlendingColorBurn.m in Sources */ = {isa = PBXBuildFile; fileRef = 58FD77A4192B58BD009E3FEB /* VnBlendingColorBurn.m */; };
+		58FD77BC192B58BD009E3FEB /* VnBlendingHue.m in Sources */ = {isa = PBXBuildFile; fileRef = 58FD77A6192B58BD009E3FEB /* VnBlendingHue.m */; };
+		58FD77BD192B58BD009E3FEB /* VnBlendingSaturation.m in Sources */ = {isa = PBXBuildFile; fileRef = 58FD77A8192B58BD009E3FEB /* VnBlendingSaturation.m */; };
+		58FD77BE192B58BD009E3FEB /* VnBlendingLuminosity.m in Sources */ = {isa = PBXBuildFile; fileRef = 58FD77AA192B58BD009E3FEB /* VnBlendingLuminosity.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -168,6 +189,48 @@
 		58F828C41924B3E20044C092 /* RenoirTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RenoirTests.m; sourceTree = "<group>"; };
 		58F828CE1924B41A0044C092 /* UnkoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnkoViewController.h; sourceTree = "<group>"; };
 		58F828CF1924B41A0044C092 /* UnkoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UnkoViewController.m; sourceTree = "<group>"; };
+		58FD777C192B4790009E3FEB /* RnProcessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RnProcessor.h; sourceTree = "<group>"; };
+		58FD777D192B4790009E3FEB /* RnProcessor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RnProcessor.m; sourceTree = "<group>"; };
+		58FD7783192B58BD009E3FEB /* VnBlendingNormal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VnBlendingNormal.h; sourceTree = "<group>"; };
+		58FD7784192B58BD009E3FEB /* VnBlendingNormal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VnBlendingNormal.m; sourceTree = "<group>"; };
+		58FD7785192B58BD009E3FEB /* VnBlendingDarken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VnBlendingDarken.h; sourceTree = "<group>"; };
+		58FD7786192B58BD009E3FEB /* VnBlendingDarken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VnBlendingDarken.m; sourceTree = "<group>"; };
+		58FD7787192B58BD009E3FEB /* VnBlendingMultiply.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VnBlendingMultiply.h; sourceTree = "<group>"; };
+		58FD7788192B58BD009E3FEB /* VnBlendingMultiply.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VnBlendingMultiply.m; sourceTree = "<group>"; };
+		58FD7789192B58BD009E3FEB /* VnBlendingScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VnBlendingScreen.h; sourceTree = "<group>"; };
+		58FD778A192B58BD009E3FEB /* VnBlendingScreen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VnBlendingScreen.m; sourceTree = "<group>"; };
+		58FD778B192B58BD009E3FEB /* VnBlendingSoftLight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VnBlendingSoftLight.h; sourceTree = "<group>"; };
+		58FD778C192B58BD009E3FEB /* VnBlendingSoftLight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VnBlendingSoftLight.m; sourceTree = "<group>"; };
+		58FD778D192B58BD009E3FEB /* VnBlendingLighten.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VnBlendingLighten.h; sourceTree = "<group>"; };
+		58FD778E192B58BD009E3FEB /* VnBlendingLighten.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VnBlendingLighten.m; sourceTree = "<group>"; };
+		58FD778F192B58BD009E3FEB /* VnBlendingHardLight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VnBlendingHardLight.h; sourceTree = "<group>"; };
+		58FD7790192B58BD009E3FEB /* VnBlendingHardLight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VnBlendingHardLight.m; sourceTree = "<group>"; };
+		58FD7791192B58BD009E3FEB /* VnBlendingVividLight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VnBlendingVividLight.h; sourceTree = "<group>"; };
+		58FD7792192B58BD009E3FEB /* VnBlendingVividLight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VnBlendingVividLight.m; sourceTree = "<group>"; };
+		58FD7793192B58BD009E3FEB /* VnBlendingOverlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VnBlendingOverlay.h; sourceTree = "<group>"; };
+		58FD7794192B58BD009E3FEB /* VnBlendingOverlay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VnBlendingOverlay.m; sourceTree = "<group>"; };
+		58FD7795192B58BD009E3FEB /* VnBlendingColorDodge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VnBlendingColorDodge.h; sourceTree = "<group>"; };
+		58FD7796192B58BD009E3FEB /* VnBlendingColorDodge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VnBlendingColorDodge.m; sourceTree = "<group>"; };
+		58FD7797192B58BD009E3FEB /* VnBlendingDifference.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VnBlendingDifference.h; sourceTree = "<group>"; };
+		58FD7798192B58BD009E3FEB /* VnBlendingDifference.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VnBlendingDifference.m; sourceTree = "<group>"; };
+		58FD7799192B58BD009E3FEB /* VnBlendingLinearDodge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VnBlendingLinearDodge.h; sourceTree = "<group>"; };
+		58FD779A192B58BD009E3FEB /* VnBlendingLinearDodge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VnBlendingLinearDodge.m; sourceTree = "<group>"; };
+		58FD779B192B58BD009E3FEB /* VnBlendingLinearLight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VnBlendingLinearLight.h; sourceTree = "<group>"; };
+		58FD779C192B58BD009E3FEB /* VnBlendingLinearLight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VnBlendingLinearLight.m; sourceTree = "<group>"; };
+		58FD779D192B58BD009E3FEB /* VnBlendingColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VnBlendingColor.h; sourceTree = "<group>"; };
+		58FD779E192B58BD009E3FEB /* VnBlendingColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VnBlendingColor.m; sourceTree = "<group>"; };
+		58FD779F192B58BD009E3FEB /* VnBlendingDarkerColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VnBlendingDarkerColor.h; sourceTree = "<group>"; };
+		58FD77A0192B58BD009E3FEB /* VnBlendingDarkerColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VnBlendingDarkerColor.m; sourceTree = "<group>"; };
+		58FD77A1192B58BD009E3FEB /* VnBlendingExclusion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VnBlendingExclusion.h; sourceTree = "<group>"; };
+		58FD77A2192B58BD009E3FEB /* VnBlendingExclusion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VnBlendingExclusion.m; sourceTree = "<group>"; };
+		58FD77A3192B58BD009E3FEB /* VnBlendingColorBurn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VnBlendingColorBurn.h; sourceTree = "<group>"; };
+		58FD77A4192B58BD009E3FEB /* VnBlendingColorBurn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VnBlendingColorBurn.m; sourceTree = "<group>"; };
+		58FD77A5192B58BD009E3FEB /* VnBlendingHue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VnBlendingHue.h; sourceTree = "<group>"; };
+		58FD77A6192B58BD009E3FEB /* VnBlendingHue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VnBlendingHue.m; sourceTree = "<group>"; };
+		58FD77A7192B58BD009E3FEB /* VnBlendingSaturation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VnBlendingSaturation.h; sourceTree = "<group>"; };
+		58FD77A8192B58BD009E3FEB /* VnBlendingSaturation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VnBlendingSaturation.m; sourceTree = "<group>"; };
+		58FD77A9192B58BD009E3FEB /* VnBlendingLuminosity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VnBlendingLuminosity.h; sourceTree = "<group>"; };
+		58FD77AA192B58BD009E3FEB /* VnBlendingLuminosity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VnBlendingLuminosity.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -276,6 +339,8 @@
 				5819F9031927A807002282A0 /* RnCurrentImage.m */,
 				58F444FF192A362800D2C512 /* RnCurrentSettings.h */,
 				58F44500192A362800D2C512 /* RnCurrentSettings.m */,
+				58FD777C192B4790009E3FEB /* RnProcessor.h */,
+				58FD777D192B4790009E3FEB /* RnProcessor.m */,
 			);
 			name = Shared;
 			sourceTree = "<group>";
@@ -357,6 +422,7 @@
 		58F8289C1924B3E20044C092 /* Renoir */ = {
 			isa = PBXGroup;
 			children = (
+				58FD7782192B58AB009E3FEB /* VnBlending */,
 				5819F8E8192799D7002282A0 /* Categories */,
 				58F0527B19273DFB006BE37F /* RnFilter */,
 				5819F9011927A773002282A0 /* Shared */,
@@ -405,6 +471,53 @@
 				58F828C11924B3E20044C092 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		58FD7782192B58AB009E3FEB /* VnBlending */ = {
+			isa = PBXGroup;
+			children = (
+				58FD7783192B58BD009E3FEB /* VnBlendingNormal.h */,
+				58FD7784192B58BD009E3FEB /* VnBlendingNormal.m */,
+				58FD7785192B58BD009E3FEB /* VnBlendingDarken.h */,
+				58FD7786192B58BD009E3FEB /* VnBlendingDarken.m */,
+				58FD7787192B58BD009E3FEB /* VnBlendingMultiply.h */,
+				58FD7788192B58BD009E3FEB /* VnBlendingMultiply.m */,
+				58FD7789192B58BD009E3FEB /* VnBlendingScreen.h */,
+				58FD778A192B58BD009E3FEB /* VnBlendingScreen.m */,
+				58FD778B192B58BD009E3FEB /* VnBlendingSoftLight.h */,
+				58FD778C192B58BD009E3FEB /* VnBlendingSoftLight.m */,
+				58FD778D192B58BD009E3FEB /* VnBlendingLighten.h */,
+				58FD778E192B58BD009E3FEB /* VnBlendingLighten.m */,
+				58FD778F192B58BD009E3FEB /* VnBlendingHardLight.h */,
+				58FD7790192B58BD009E3FEB /* VnBlendingHardLight.m */,
+				58FD7791192B58BD009E3FEB /* VnBlendingVividLight.h */,
+				58FD7792192B58BD009E3FEB /* VnBlendingVividLight.m */,
+				58FD7793192B58BD009E3FEB /* VnBlendingOverlay.h */,
+				58FD7794192B58BD009E3FEB /* VnBlendingOverlay.m */,
+				58FD7795192B58BD009E3FEB /* VnBlendingColorDodge.h */,
+				58FD7796192B58BD009E3FEB /* VnBlendingColorDodge.m */,
+				58FD7797192B58BD009E3FEB /* VnBlendingDifference.h */,
+				58FD7798192B58BD009E3FEB /* VnBlendingDifference.m */,
+				58FD7799192B58BD009E3FEB /* VnBlendingLinearDodge.h */,
+				58FD779A192B58BD009E3FEB /* VnBlendingLinearDodge.m */,
+				58FD779B192B58BD009E3FEB /* VnBlendingLinearLight.h */,
+				58FD779C192B58BD009E3FEB /* VnBlendingLinearLight.m */,
+				58FD779D192B58BD009E3FEB /* VnBlendingColor.h */,
+				58FD779E192B58BD009E3FEB /* VnBlendingColor.m */,
+				58FD779F192B58BD009E3FEB /* VnBlendingDarkerColor.h */,
+				58FD77A0192B58BD009E3FEB /* VnBlendingDarkerColor.m */,
+				58FD77A1192B58BD009E3FEB /* VnBlendingExclusion.h */,
+				58FD77A2192B58BD009E3FEB /* VnBlendingExclusion.m */,
+				58FD77A3192B58BD009E3FEB /* VnBlendingColorBurn.h */,
+				58FD77A4192B58BD009E3FEB /* VnBlendingColorBurn.m */,
+				58FD77A5192B58BD009E3FEB /* VnBlendingHue.h */,
+				58FD77A6192B58BD009E3FEB /* VnBlendingHue.m */,
+				58FD77A7192B58BD009E3FEB /* VnBlendingSaturation.h */,
+				58FD77A8192B58BD009E3FEB /* VnBlendingSaturation.m */,
+				58FD77A9192B58BD009E3FEB /* VnBlendingLuminosity.h */,
+				58FD77AA192B58BD009E3FEB /* VnBlendingLuminosity.m */,
+			);
+			name = VnBlending;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -536,32 +649,53 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58FD77B5192B58BD009E3FEB /* VnBlendingDifference.m in Sources */,
 				5808B5D4192926CE00B94E07 /* RnViewControllerSaturation.m in Sources */,
 				5898FDF8192A711400901333 /* RnViewNavigationBarButton.m in Sources */,
 				5898FDE9192A683700901333 /* RnViewLabel.m in Sources */,
 				58F0527E19273E92006BE37F /* RnFilterDryBrush.m in Sources */,
+				58FD77BE192B58BD009E3FEB /* VnBlendingLuminosity.m in Sources */,
 				58F444FB192A323800D2C512 /* RnViewHomeGallery.m in Sources */,
 				58F44501192A362800D2C512 /* RnCurrentSettings.m in Sources */,
+				58FD77B7192B58BD009E3FEB /* VnBlendingLinearLight.m in Sources */,
 				5819F8FE192799EC002282A0 /* UIImage+extend.m in Sources */,
+				58FD77BC192B58BD009E3FEB /* VnBlendingHue.m in Sources */,
 				5809F24C1929FAB100F1296E /* RnViewHomeLauncher.m in Sources */,
 				5819F9041927A807002282A0 /* RnCurrentImage.m in Sources */,
 				5819F8FB192799EC002282A0 /* UIScreen+extend.m in Sources */,
 				5819F8FA192799EC002282A0 /* UIDevice+extend.m in Sources */,
 				5808B5CE1929261D00B94E07 /* RnViewControllerConfirmation.m in Sources */,
+				58FD77B4192B58BD009E3FEB /* VnBlendingColorDodge.m in Sources */,
+				58FD77BD192B58BD009E3FEB /* VnBlendingSaturation.m in Sources */,
 				5819F8FD192799EC002282A0 /* UIScrollView+extend.m in Sources */,
+				58FD77B6192B58BD009E3FEB /* VnBlendingLinearDodge.m in Sources */,
+				58FD77B3192B58BD009E3FEB /* VnBlendingOverlay.m in Sources */,
 				5808B5D71929270E00B94E07 /* RnViewControllerColor.m in Sources */,
 				5819F8FF192799EC002282A0 /* UIViewController+extend.m in Sources */,
 				58F828B01924B3E20044C092 /* ViewController.m in Sources */,
+				58FD777E192B4790009E3FEB /* RnProcessor.m in Sources */,
 				58F828A71924B3E20044C092 /* AppDelegate.m in Sources */,
+				58FD77AB192B58BD009E3FEB /* VnBlendingNormal.m in Sources */,
 				58F44504192A3BB900D2C512 /* RnViewHomeGalleryItemButton.m in Sources */,
+				58FD77BA192B58BD009E3FEB /* VnBlendingExclusion.m in Sources */,
+				58FD77B1192B58BD009E3FEB /* VnBlendingHardLight.m in Sources */,
+				58FD77AE192B58BD009E3FEB /* VnBlendingScreen.m in Sources */,
 				58F828A31924B3E20044C092 /* main.m in Sources */,
+				58FD77B8192B58BD009E3FEB /* VnBlendingColor.m in Sources */,
 				5819F8FC192799EC002282A0 /* UIView+extend.m in Sources */,
+				58FD77BB192B58BD009E3FEB /* VnBlendingColorBurn.m in Sources */,
+				58FD77AD192B58BD009E3FEB /* VnBlendingMultiply.m in Sources */,
 				5808B5D1192926B900B94E07 /* RnViewControllerFrame.m in Sources */,
+				58FD77AF192B58BD009E3FEB /* VnBlendingSoftLight.m in Sources */,
 				5819F900192799EC002282A0 /* UIImagePickerController+extend.m in Sources */,
 				5808B5CB192925FF00B94E07 /* RnViewControllerRoot.m in Sources */,
+				58FD77AC192B58BD009E3FEB /* VnBlendingDarken.m in Sources */,
+				58FD77B9192B58BD009E3FEB /* VnBlendingDarkerColor.m in Sources */,
 				5809F2441929F93F00F1296E /* RnViewControllerHome.m in Sources */,
+				58FD77B0192B58BD009E3FEB /* VnBlendingLighten.m in Sources */,
 				58F828D01924B41B0044C092 /* UnkoViewController.m in Sources */,
 				5898FDDE192A5F8A00901333 /* RnViewNavigationBar.m in Sources */,
+				58FD77B2192B58BD009E3FEB /* VnBlendingVividLight.m in Sources */,
 				5808B5DA1929279700B94E07 /* RnViewControllerExport.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
